@@ -39,4 +39,7 @@ dependencies {
 
     //livedata
     implementation group: 'android.arch.lifecycle', name: 'livedata', version: "$archVersion"
+
+    //gson
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.3.1'
 }
