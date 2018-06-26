@@ -33,4 +33,10 @@ dependencies {
 
     //design
     implementation group: 'com.android.support', name: 'design', version: "$supportVersion"
+
+    //room
+    implementation group: 'android.arch.persistence.room', name: 'runtime', version: "$archVersion"
+
+    //livedata
+    implementation group: 'android.arch.lifecycle', name: 'livedata', version: "$archVersion"
 }
