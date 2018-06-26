@@ -1,4 +1,4 @@
-package eu.napcode.resume.dao
+package eu.napcode.resume.entity
 
 import android.arch.persistence.room.Entity
 import com.google.gson.annotations.SerializedName
