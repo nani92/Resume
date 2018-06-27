@@ -1,11 +1,13 @@
 package eu.napcode.resume.entity
 
 import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity
 data class DeveloperEntity(
 
+        @PrimaryKey
         val id: Int,
 
         @field:SerializedName("name")
@@ -16,6 +18,9 @@ data class DeveloperEntity(
 
         @field:SerializedName("role")
         val role: String,
+
+        @field:SerializedName("summary")
+        val summary: String,
 
         @field:SerializedName("mail")
         val mail: String,

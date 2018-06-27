@@ -23,6 +23,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -38,10 +43,12 @@ dependencies {
     implementation group: 'com.android.support', name: 'design', version: "$supportVersion"
 
     //room
-    implementation group: 'android.arch.persistence.room', name: 'runtime', version: "$archVersion"
+    implementation "android.arch.persistence.room:runtime:$archVersion"
+    kapt "android.arch.persistence.room:compiler:$archVersion"
 
     //livedata
-    implementation group: 'android.arch.lifecycle', name: 'livedata', version: "$archVersion"
+    implementation "android.arch.lifecycle:extensions:$archVersion"
+    kapt "android.arch.lifecycle:compiler:$archVersion"
 
     //gson
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.4'
