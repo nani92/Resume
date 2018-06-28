@@ -4,7 +4,7 @@ import android.app.Application
 import dagger.BindsInstance
 import dagger.Component
 import eu.napcode.resume.ResumeApp
-import eu.napcode.resume.di.modules.ActivityModule
+import eu.napcode.resume.di.modules.ActivitiesModule
 import eu.napcode.resume.di.modules.AppModule
 import javax.inject.Singleton
 
@@ -12,7 +12,7 @@ import javax.inject.Singleton
 @Component(
         modules = [
             AppModule::class,
-            ActivityModule::class]
+            ActivitiesModule::class]
 )
 interface AppComponent {
 

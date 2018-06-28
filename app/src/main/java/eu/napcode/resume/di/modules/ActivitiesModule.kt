@@ -5,7 +5,7 @@ import dagger.android.ContributesAndroidInjector
 import eu.napcode.resume.MainActivity
 
 @Module
-interface ActivityModule {
+interface ActivitiesModule {
 
     @ContributesAndroidInjector
     fun bindMainActivity(): MainActivity
