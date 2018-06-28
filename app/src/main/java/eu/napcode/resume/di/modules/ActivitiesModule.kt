@@ -2,7 +2,7 @@ package eu.napcode.resume.di.modules
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import eu.napcode.resume.MainActivity
+import eu.napcode.resume.ui.main.MainActivity
 
 @Module
 interface ActivitiesModule {
