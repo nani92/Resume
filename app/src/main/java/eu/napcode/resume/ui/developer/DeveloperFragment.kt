@@ -1,5 +1,6 @@
 package eu.napcode.resume.ui.developer
 
+import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
@@ -33,5 +34,7 @@ class DeveloperFragment: Fragment() {
 
         developerViewModel = ViewModelProviders.of(this, viewModelFactory)
                 .get(DeveloperViewModel::class.java)
+
+        developerViewModel.developer.observe(this, Observer { developer -> })
     }
 }
