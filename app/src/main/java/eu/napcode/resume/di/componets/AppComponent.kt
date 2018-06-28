@@ -7,6 +7,7 @@ import eu.napcode.resume.ResumeApp
 import eu.napcode.resume.di.modules.ActivitiesModule
 import eu.napcode.resume.di.modules.AppModule
 import eu.napcode.resume.di.modules.FragmentsModule
+import eu.napcode.resume.di.modules.ViewModelsModule
 import eu.napcode.resume.ui.developer.DeveloperFragment
 import javax.inject.Singleton
 
@@ -15,7 +16,8 @@ import javax.inject.Singleton
         modules = [
             AppModule::class,
             ActivitiesModule::class,
-            FragmentsModule::class]
+            FragmentsModule::class,
+            ViewModelsModule::class]
 )
 interface AppComponent {
 
