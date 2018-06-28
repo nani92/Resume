@@ -10,9 +10,10 @@ data class Developer(val id: Int,
                      val mail : String,
                      val home: String,
                      val github: String,
-                     val gitlab: String) {
+                     val gitlab: String,
+                     val playStore: String) {
 
     constructor(entity: DeveloperEntity) :
             this(entity.id, entity.name, entity.surname, entity.role, entity.summary,
-                    entity.mail, entity.home, entity.github, entity.gitlab)
+                    entity.mail, entity.home, entity.github, entity.gitlab, entity.playStore)
 }

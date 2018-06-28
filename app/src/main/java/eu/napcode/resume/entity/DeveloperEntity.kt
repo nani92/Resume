@@ -32,7 +32,10 @@ data class DeveloperEntity(
         val github: String,
 
         @field:SerializedName("gitlab")
-        val gitlab: String
+        val gitlab: String,
+
+        @field:SerializedName("playstore")
+        val playStore: String
 )
 
 
