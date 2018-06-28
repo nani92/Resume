@@ -2,17 +2,22 @@ package eu.napcode.resume
 
 import android.app.Activity
 import android.app.Application
+import android.support.v4.app.Fragment
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import javax.inject.Inject
 
 import dagger.android.HasActivityInjector
+import dagger.android.support.HasSupportFragmentInjector
 import eu.napcode.resume.di.componets.DaggerAppComponent
 
-class ResumeApp : Application(), HasActivityInjector {
+class ResumeApp : Application(), HasActivityInjector, HasSupportFragmentInjector {
 
     @Inject
-    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
+    lateinit var activityInjector: DispatchingAndroidInjector<Activity>
+
+    @Inject
+    lateinit var fragmentInjector: DispatchingAndroidInjector<Fragment>
 
     override fun onCreate() {
         super.onCreate()
@@ -20,7 +25,7 @@ class ResumeApp : Application(), HasActivityInjector {
         setupDagger()
     }
 
-    fun setupDagger() {
+    private fun setupDagger() {
         DaggerAppComponent.
                 builder()
                 .application(this)
@@ -28,5 +33,7 @@ class ResumeApp : Application(), HasActivityInjector {
                 .inject(this)
     }
 
-    override fun activityInjector(): AndroidInjector<Activity> = this.dispatchingAndroidInjector
+    override fun activityInjector(): AndroidInjector<Activity> = this.activityInjector
+
+    override fun supportFragmentInjector(): AndroidInjector<Fragment> = this.fragmentInjector
 }
