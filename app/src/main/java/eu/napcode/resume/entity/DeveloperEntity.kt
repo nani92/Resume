@@ -3,6 +3,7 @@ package eu.napcode.resume.entity
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import eu.napcode.resume.model.Developer
 
 @Entity
 data class DeveloperEntity(
@@ -36,6 +37,11 @@ data class DeveloperEntity(
 
         @field:SerializedName("playstore")
         val playStore: String
-)
+) {
+        constructor(developer: Developer) :
+                this(developer.id, developer.name, developer.surname, developer.role,
+                        developer.summary, developer.mail, developer.home, developer.github,
+                        developer.gitlab, developer.playStore)
+}
 
 
