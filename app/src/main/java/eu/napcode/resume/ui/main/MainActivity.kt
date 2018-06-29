@@ -6,8 +6,12 @@ import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.ActionBarDrawerToggle
 import android.transition.Slide
+import android.util.Log
 import android.view.MenuItem
+import com.google.gson.Gson
+import eu.napcode.developerdataprovider.LocalDataProvider
 import eu.napcode.resume.R
+import eu.napcode.resume.model.Developer
 import eu.napcode.resume.ui.developer.DeveloperFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -26,6 +30,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (savedInstanceState == null) {
             displayFirstFragment()
         }
+
     }
 
     private fun setupDrawer() {
