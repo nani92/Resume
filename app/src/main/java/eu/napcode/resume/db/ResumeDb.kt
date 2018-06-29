@@ -4,7 +4,6 @@ import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase
 import eu.napcode.resume.dao.DeveloperDao
 
-
 @Database(
         entities = [
             eu.napcode.resume.entity.DeveloperEntity::class

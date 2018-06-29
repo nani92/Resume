@@ -1,14 +1,12 @@
 {
-  "developer": {
-    "id": 0,
-    "name": "Natalia",
-    "surname": "Jastrzębska",
-    "role": "Mobile Developer",
-    "summary": "Summary",
-    "mail": "natalia@napcode.eu",
-    "home": "http://napcode.eu",
-    "github": "nani92",
-    "gitlab": "nani92",
-    "playstore": "8034018404241334903"
-  }
+  "id": 0,
+  "name": "Natalia",
+  "surname": "Jastrzębska",
+  "role": "Mobile Developer",
+  "summary": "Summary",
+  "mail": "natalia@napcode.eu",
+  "home": "http://napcode.eu",
+  "github": "nani92",
+  "gitlab": "nani92",
+  "playStore": "8034018404241334903"
 }

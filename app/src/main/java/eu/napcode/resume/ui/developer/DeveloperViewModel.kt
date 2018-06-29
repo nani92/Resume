@@ -8,7 +8,7 @@ import eu.napcode.resume.repository.DeveloperRepository
 import javax.inject.Inject
 
 class DeveloperViewModel
-@Inject constructor(val developerRepository: DeveloperRepository) : ViewModel() {
+@Inject constructor(private val developerRepository: DeveloperRepository) : ViewModel() {
 
     val developer : LiveData<Developer> = developerRepository.getDeveloper(BuildConfig.developerId)
 

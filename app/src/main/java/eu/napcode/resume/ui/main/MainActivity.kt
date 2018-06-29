@@ -6,26 +6,36 @@ import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.ActionBarDrawerToggle
 import android.transition.Slide
-import android.util.Log
 import android.view.MenuItem
-import com.google.gson.Gson
+import dagger.android.AndroidInjection
 import eu.napcode.developerdataprovider.LocalDataProvider
 import eu.napcode.resume.R
 import eu.napcode.resume.model.Developer
+import eu.napcode.resume.repository.DeveloperRepository
 import eu.napcode.resume.ui.developer.DeveloperFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var drawerToggle: ActionBarDrawerToggle
     private lateinit var fragmentToSet: Fragment
 
+    @Inject
+    lateinit var repository: DeveloperRepository
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        AndroidInjection.inject(this)
 
         setSupportActionBar(toolbar)
         setupDrawer()
+
+        //TODO remove (here temporary)
+        var dev = LocalDataProvider(this).getDeveloper(Developer::class.java)
+        repository.saveDeveloper(dev as Developer).subscribe()
+        //TODO end
 
         if (savedInstanceState == null) {
             displayFirstFragment()
