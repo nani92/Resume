@@ -1,1 +1,1 @@
-include ':app', ':developerdataprovider'
+include ':app', ':dataprovider'
