@@ -24,7 +24,7 @@
             tools:text="@tools:sample/lorem"/>
 
         <TextView
-            android:id="@+id/roleTextSize"
+            android:id="@+id/roleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/secondaryHeaderTextSize"

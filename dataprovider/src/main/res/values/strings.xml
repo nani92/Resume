@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DeveloperDataProvider</string>
+    <string name="dev_name">%1s %2s</string>
 </resources>

@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import dagger.android.support.AndroidSupportInjection
 import eu.napcode.resume.R
+import kotlinx.android.synthetic.main.fragment_developer.*
 import javax.inject.Inject
 
 class DeveloperFragment: Fragment() {
@@ -35,6 +36,9 @@ class DeveloperFragment: Fragment() {
         developerViewModel = ViewModelProviders.of(this, viewModelFactory)
                 .get(DeveloperViewModel::class.java)
 
-        developerViewModel.developer.observe(this, Observer { developer -> })
+        developerViewModel.developer.observe(this, Observer { developer ->
+            nameTextView.text = getString(R.string.dev_name,developer!!.name, developer.surname)
+            roleTextView.text = developer.role
+        })
     }
 }
