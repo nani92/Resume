@@ -11,27 +11,56 @@
     <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/base_margin">
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/devBackgroundImageView"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            android:scaleType="center"
+            android:src="@drawable/bg"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/nameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
             android:textSize="@dimen/primaryHeaderTextSize"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/roleTextView"
+            app:layout_constraintLeft_toRightOf="@id/leftGuideline"
+            app:layout_constraintRight_toLeftOf="@id/rightGuideline"
             tools:text="@tools:sample/lorem"/>
 
         <TextView
             android:id="@+id/roleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/base_margin"
+            android:textColor="@android:color/white"
             android:textSize="@dimen/secondaryHeaderTextSize"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/nameTextView"
+            app:layout_constraintBottom_toBottomOf="@id/devBackgroundImageView"
+            app:layout_constraintLeft_toRightOf="@id/leftGuideline"
+            app:layout_constraintRight_toLeftOf="@id/rightGuideline"
             tools:text="@tools:sample/lorem"/>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/leftGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/base_margin"/>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/rightGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/base_margin"/>
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
