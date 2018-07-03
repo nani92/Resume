@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Resume</string>
+
     <string name="open_drawer">Open drawer</string>
     <string name="close_drawer">Close drawer</string>
+
+    <string name="dev_name">%1s %2s</string>
+    <string name="dev_summary">&lt;b>Summary&lt;/b> &lt;br/>&lt;br/>%1s</string>
 </resources>

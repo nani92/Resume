@@ -6,4 +6,6 @@
     <dimen name="drawer_user_name_text_size">16sp</dimen>
     <dimen name="primaryHeaderTextSize">24sp</dimen>
     <dimen name="secondaryHeaderTextSize">20sp</dimen>
+    <dimen name="primaryTextSize">16sp</dimen>
+    <dimen name="cardViewElevation">4dp</dimen>
 </resources>

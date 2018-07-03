@@ -32,23 +32,23 @@
             android:src="@drawable/avatar"
             app:civ_border_color="@android:color/white"
             app:civ_border_width="2dp"
-            app:layout_constraintBottom_toTopOf="@id/nameTextView"
+            app:layout_constraintBottom_toTopOf="@id/devNameTextView"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
 
         <TextView
-            android:id="@+id/nameTextView"
+            android:id="@+id/devNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
             android:textSize="@dimen/primaryHeaderTextSize"
-            app:layout_constraintBottom_toTopOf="@id/roleTextView"
+            app:layout_constraintBottom_toTopOf="@id/devRoleTextView"
             app:layout_constraintLeft_toRightOf="@id/leftGuideline"
             app:layout_constraintRight_toLeftOf="@id/rightGuideline"
             tools:text="@tools:sample/lorem"/>
 
         <TextView
-            android:id="@+id/roleTextView"
+            android:id="@+id/devRoleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/base_margin"
@@ -58,6 +58,16 @@
             app:layout_constraintLeft_toRightOf="@id/leftGuideline"
             app:layout_constraintRight_toLeftOf="@id/rightGuideline"
             tools:text="@tools:sample/lorem"/>
+
+        <TextView
+            android:id="@+id/devSummaryTextView"
+            style="@style/CardViewLikeTextViewStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/leftGuideline"
+            app:layout_constraintRight_toLeftOf="@id/rightGuideline"
+            app:layout_constraintTop_toBottomOf="@id/devBackgroundImageView"
+            tools:text="@tools:sample/lorem/random"/>
 
         <android.support.constraint.Guideline
             android:id="@+id/leftGuideline"

@@ -16,4 +16,12 @@
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
+    <style name="CardViewLikeTextViewStyle">
+        <item name="android:padding">@dimen/base_margin</item>
+        <item name="android:textSize">@dimen/primaryTextSize</item>
+        <item name="android:background">@drawable/rounded_corner</item>
+        <item name="android:elevation">@dimen/cardViewElevation</item>
+        <item name="android:layout_marginTop">@dimen/base_margin</item>
+    </style>
+
 </resources>

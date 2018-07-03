@@ -6,6 +6,7 @@ import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,8 +38,9 @@ class DeveloperFragment: Fragment() {
                 .get(DeveloperViewModel::class.java)
 
         developerViewModel.developer.observe(this, Observer { developer ->
-            nameTextView.text = getString(R.string.dev_name,developer!!.name, developer.surname)
-            roleTextView.text = developer.role
+            devNameTextView.text = getString(R.string.dev_name,developer!!.name, developer.surname)
+            devRoleTextView.text = developer.role
+            devSummaryTextView.text = Html.fromHtml(getString(R.string.dev_summary, developer.summary))
         })
     }
 }
