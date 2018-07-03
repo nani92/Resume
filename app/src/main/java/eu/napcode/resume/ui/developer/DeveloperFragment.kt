@@ -16,6 +16,9 @@ import dagger.android.support.AndroidSupportInjection
 import eu.napcode.resume.R
 import kotlinx.android.synthetic.main.fragment_developer.*
 import javax.inject.Inject
+import android.content.Intent
+import android.net.Uri
+
 
 class DeveloperFragment: Fragment() {
 
@@ -44,6 +47,7 @@ class DeveloperFragment: Fragment() {
             devRoleTextView.text = developer.role
             devSummaryTextView.text = getSummarySpanned(developer.summary)
             devHighlightsTextView.text = getHighlightsSpanned(developer.highlights)
+            mailFAB.setOnClickListener{startSendMailActivity(developer.mail)}
         })
     }
 
@@ -75,4 +79,13 @@ class DeveloperFragment: Fragment() {
 
     private fun getHighlightsBredString(highlights: List<String>) =
             highlights.joinToString(prefix = "- ", separator = "<br/>- ")
+
+    private fun startSendMailActivity(mail: String) {
+        val uri = Uri.parse("mailto:$mail")
+                .buildUpon()
+                .appendQueryParameter("subject", getString(R.string.mail_subject))
+                .build()
+
+        startActivity(Intent(Intent.ACTION_SENDTO, uri))
+    }
 }
