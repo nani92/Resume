@@ -36,12 +36,15 @@ data class DeveloperEntity(
         val gitlab: String,
 
         @field:SerializedName("playstore")
-        val playStore: String
+        val playStore: String,
+
+        @field:SerializedName("highlights")
+        val highlights: String
 ) {
         constructor(developer: Developer) :
                 this(developer.id, developer.name, developer.surname, developer.role,
                         developer.summary, developer.mail, developer.home, developer.github,
-                        developer.gitlab, developer.playStore)
+                        developer.gitlab, developer.playStore, developer.highlights)
 }
 
 

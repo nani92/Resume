@@ -11,7 +11,8 @@
     <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/base_margin">
 
         <ImageView
             android:id="@+id/devBackgroundImageView"
@@ -67,6 +68,16 @@
             app:layout_constraintLeft_toRightOf="@id/leftGuideline"
             app:layout_constraintRight_toLeftOf="@id/rightGuideline"
             app:layout_constraintTop_toBottomOf="@id/devBackgroundImageView"
+            tools:text="@tools:sample/lorem/random"/>
+
+        <TextView
+            android:id="@+id/devHighlightsTextView"
+            style="@style/CardViewLikeTextViewStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/leftGuideline"
+            app:layout_constraintRight_toLeftOf="@id/rightGuideline"
+            app:layout_constraintTop_toBottomOf="@id/devSummaryTextView"
             tools:text="@tools:sample/lorem/random"/>
 
         <android.support.constraint.Guideline

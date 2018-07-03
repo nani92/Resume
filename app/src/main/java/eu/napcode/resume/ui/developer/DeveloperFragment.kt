@@ -4,9 +4,11 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.text.Html
+import android.text.Spanned
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,7 +42,37 @@ class DeveloperFragment: Fragment() {
         developerViewModel.developer.observe(this, Observer { developer ->
             devNameTextView.text = getString(R.string.dev_name,developer!!.name, developer.surname)
             devRoleTextView.text = developer.role
-            devSummaryTextView.text = Html.fromHtml(getString(R.string.dev_summary, developer.summary))
+            devSummaryTextView.text = getSummarySpanned(developer.summary)
+            devHighlightsTextView.text = getHighlightsSpanned(developer.highlights)
         })
     }
+
+    private fun getSummarySpanned(summary: String) : Spanned {
+
+        return if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+            Html.fromHtml(getString(R.string.dev_summary, summary))
+        } else {
+            Html.fromHtml(getString(R.string.dev_summary, summary), Html.FROM_HTML_MODE_COMPACT)
+        }
+    }
+
+    private fun getHighlightsSpanned(highlights: String): Spanned {
+
+        return if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+            Html.fromHtml(getString(R.string.dev_highlights, getHighlightsBredString(highlights.split(";"))))
+        } else {
+            Html.fromHtml(getString(R.string.dev_highlights, getHighlightsULString(highlights.split(";"))),
+                    Html.FROM_HTML_MODE_COMPACT)
+        }
+    }
+
+    private fun getHighlightsULString(highlights: List<String>): String {
+        return highlights.joinToString(
+                prefix = "<ul><li>",
+                separator = "</li><li>",
+                postfix = "</li></ul>")
+    }
+
+    private fun getHighlightsBredString(highlights: List<String>) =
+            highlights.joinToString(prefix = "- ", separator = "<br/>- ")
 }
