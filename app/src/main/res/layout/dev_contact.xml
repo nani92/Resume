@@ -19,6 +19,7 @@
 
     <ImageView
         android:id="@+id/playstoreImageView"
+        style="@style/ContactImageView"
         android:layout_width="@dimen/iconSize"
         android:layout_height="@dimen/iconSize"
         android:src="@drawable/ic_playstore"

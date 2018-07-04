@@ -24,4 +24,10 @@
         <item name="android:layout_marginTop">@dimen/base_margin</item>
     </style>
 
+    <style name="ContactImageView">
+        <item name="android:padding">@dimen/small_margin</item>
+        <item name="android:tint">@color/colorAccent</item>
+        <item name="android:foreground">?selectableItemBackground</item>
+    </style>
+
 </resources>
