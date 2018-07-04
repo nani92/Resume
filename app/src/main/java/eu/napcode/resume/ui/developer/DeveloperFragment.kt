@@ -18,9 +18,10 @@ import kotlinx.android.synthetic.main.fragment_developer.*
 import javax.inject.Inject
 import android.content.Intent
 import android.net.Uri
+import kotlinx.android.synthetic.main.dev_contact.*
 
 
-class DeveloperFragment: Fragment() {
+class DeveloperFragment : Fragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -43,15 +44,16 @@ class DeveloperFragment: Fragment() {
                 .get(DeveloperViewModel::class.java)
 
         developerViewModel.developer.observe(this, Observer { developer ->
-            devNameTextView.text = getString(R.string.dev_name,developer!!.name, developer.surname)
+            devNameTextView.text = getString(R.string.dev_name, developer!!.name, developer.surname)
             devRoleTextView.text = developer.role
             devSummaryTextView.text = getSummarySpanned(developer.summary)
             devHighlightsTextView.text = getHighlightsSpanned(developer.highlights)
-            mailFAB.setOnClickListener{startSendMailActivity(developer.mail)}
+            mailFAB.setOnClickListener { startSendMailActivity(developer.mail) }
+            playstoreImageView.setOnClickListener { startPlayStoreActivity(developer.playStore) }
         })
     }
 
-    private fun getSummarySpanned(summary: String) : Spanned {
+    private fun getSummarySpanned(summary: String): Spanned {
 
         return if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
             Html.fromHtml(getString(R.string.dev_summary, summary))
@@ -88,4 +90,14 @@ class DeveloperFragment: Fragment() {
 
         startActivity(Intent(Intent.ACTION_SENDTO, uri))
     }
+
+    private fun startPlayStoreActivity(playStore: String) {
+
+        try {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://dev?id=$playStore")))
+        } catch (anfe: android.content.ActivityNotFoundException) {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/dev?id=$playStore")))
+        }
+    }
+
 }

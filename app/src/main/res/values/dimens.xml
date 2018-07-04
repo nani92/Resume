@@ -9,4 +9,5 @@
     <dimen name="primaryTextSize">16sp</dimen>
     <dimen name="cardViewElevation">4dp</dimen>
     <dimen name="fab_size">56dp</dimen>
+    <dimen name="iconSize">48dp</dimen>
 </resources>

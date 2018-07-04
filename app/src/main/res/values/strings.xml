@@ -7,6 +7,6 @@
     <string name="dev_name">%1s %2s</string>
     <string name="dev_summary">&lt;b>Summary&lt;/b> &lt;br/>&lt;br/>%1s</string>
     <string name="dev_highlights">&lt;b>Highlights&lt;/b> &lt;br/>&lt;br/>%1s</string>
-    <string name="dev_contact">&lt;b>Contact&lt;/b> &lt;br/>&lt;br/>%1s</string>
+    <string name="dev_contact">Contact\n</string>
     <string name="mail_subject">Android Development</string>
 </resources>
