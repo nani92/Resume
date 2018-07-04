@@ -21,9 +21,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var drawerToggle: ActionBarDrawerToggle
     private lateinit var fragmentToSet: Fragment
 
-    @Inject
-    lateinit var repository: DeveloperRepository
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,11 +28,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         setSupportActionBar(toolbar)
         setupDrawer()
-
-        //TODO remove (here temporary)
-        var dev = LocalDataProvider(this).getDeveloper(Developer::class.java)
-        repository.saveDeveloper(dev as Developer).subscribe()
-        //TODO end
 
         if (savedInstanceState == null) {
             displayFirstFragment()
