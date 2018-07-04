@@ -20,6 +20,7 @@ import android.content.Intent
 import android.content.Intent.ACTION_SENDTO
 import android.content.Intent.ACTION_VIEW
 import android.net.Uri
+import eu.napcode.resume.model.Developer
 import kotlinx.android.synthetic.main.dev_contact.*
 
 
@@ -46,16 +47,21 @@ class DeveloperFragment : Fragment() {
                 .get(DeveloperViewModel::class.java)
 
         developerViewModel.developer.observe(this, Observer { developer ->
-            devNameTextView.text = getString(R.string.dev_name, developer!!.name, developer.surname)
-            devRoleTextView.text = developer.role
-            devSummaryTextView.text = getSummarySpanned(developer.summary)
-            devHighlightsTextView.text = getHighlightsSpanned(developer.highlights)
-            mailFAB.setOnClickListener { startSendMailActivity(developer.mail) }
-            playstoreImageView.setOnClickListener { startPlayStoreActivity(developer.playStore) }
-            githubImageView.setOnClickListener { startWebActivity("https://github.com/${developer.github}") }
-            homeImageView.setOnClickListener { startWebActivity(developer.home) }
-            gitlabImageView.setOnClickListener{ startWebActivity("https://gitlab.com/${developer.gitlab}")}
+            displayDeveloper(developer!!)
         })
+    }
+
+    private fun displayDeveloper(developer: Developer) {
+        //TODO hide contact elements when not available :)
+        devNameTextView.text = getString(R.string.dev_name, developer.name, developer.surname)
+        devRoleTextView.text = developer.role
+        devSummaryTextView.text = getSummarySpanned(developer.summary)
+        devHighlightsTextView.text = getHighlightsSpanned(developer.highlights)
+        mailFAB.setOnClickListener { startSendMailActivity(developer.mail) }
+        playstoreImageView.setOnClickListener { startPlayStoreActivity(developer.playStore) }
+        githubImageView.setOnClickListener { startWebActivity("https://github.com/${developer.github}") }
+        homeImageView.setOnClickListener { startWebActivity(developer.home) }
+        gitlabImageView.setOnClickListener{ startWebActivity("https://gitlab.com/${developer.gitlab}")}
     }
 
     private fun getSummarySpanned(summary: String): Spanned {
