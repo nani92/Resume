@@ -23,6 +23,18 @@
         android:layout_width="@dimen/iconSize"
         android:layout_height="@dimen/iconSize"
         android:src="@drawable/ic_playstore"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/githubImageView"
         app:layout_constraintTop_toBottomOf="@id/contactTextView"/>
+
+    <ImageView
+        android:id="@+id/githubImageView"
+        style="@style/ContactImageView"
+        android:layout_width="@dimen/iconSize"
+        android:layout_height="@dimen/iconSize"
+        android:src="@drawable/ic_github"
+        app:layout_constraintLeft_toRightOf="@id/playstoreImageView"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/playstoreImageView"/>
 
 </android.support.constraint.ConstraintLayout>

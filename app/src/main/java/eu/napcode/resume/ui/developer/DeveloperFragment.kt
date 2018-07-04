@@ -17,6 +17,8 @@ import eu.napcode.resume.R
 import kotlinx.android.synthetic.main.fragment_developer.*
 import javax.inject.Inject
 import android.content.Intent
+import android.content.Intent.ACTION_SENDTO
+import android.content.Intent.ACTION_VIEW
 import android.net.Uri
 import kotlinx.android.synthetic.main.dev_contact.*
 
@@ -50,6 +52,7 @@ class DeveloperFragment : Fragment() {
             devHighlightsTextView.text = getHighlightsSpanned(developer.highlights)
             mailFAB.setOnClickListener { startSendMailActivity(developer.mail) }
             playstoreImageView.setOnClickListener { startPlayStoreActivity(developer.playStore) }
+            githubImageView.setOnClickListener { startWebActivity("https://github.com/${developer.github}") }
         })
     }
 
@@ -88,16 +91,20 @@ class DeveloperFragment : Fragment() {
                 .appendQueryParameter("subject", getString(R.string.mail_subject))
                 .build()
 
-        startActivity(Intent(Intent.ACTION_SENDTO, uri))
+        startActivity(Intent(ACTION_SENDTO, uri))
     }
 
     private fun startPlayStoreActivity(playStore: String) {
 
         try {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://dev?id=$playStore")))
+            startActivity(Intent(ACTION_VIEW, Uri.parse("market://dev?id=$playStore")))
         } catch (anfe: android.content.ActivityNotFoundException) {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/dev?id=$playStore")))
+            startActivity(Intent(ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/dev?id=$playStore")))
         }
     }
 
+    private fun startWebActivity(webAddress: String) {
+        var intent = Intent(ACTION_VIEW, Uri.parse(webAddress))
+        startActivity(intent)
+    }
 }
