@@ -54,6 +54,7 @@ class DeveloperFragment : Fragment() {
             playstoreImageView.setOnClickListener { startPlayStoreActivity(developer.playStore) }
             githubImageView.setOnClickListener { startWebActivity("https://github.com/${developer.github}") }
             homeImageView.setOnClickListener { startWebActivity(developer.home) }
+            gitlabImageView.setOnClickListener{ startWebActivity("https://gitlab.com/${developer.gitlab}")}
         })
     }
 

@@ -23,6 +23,7 @@
         android:layout_width="@dimen/iconSize"
         android:layout_height="@dimen/iconSize"
         android:src="@drawable/ic_playstore"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/githubImageView"
         app:layout_constraintTop_toBottomOf="@id/contactTextView"/>
@@ -44,6 +45,16 @@
         android:layout_height="@dimen/iconSize"
         android:src="@drawable/ic_home"
         app:layout_constraintLeft_toRightOf="@id/githubImageView"
+        app:layout_constraintRight_toLeftOf="@id/gitlabImageView"
+        app:layout_constraintTop_toTopOf="@id/playstoreImageView"/>
+
+    <ImageView
+        android:id="@+id/gitlabImageView"
+        style="@style/ContactImageView"
+        android:layout_width="@dimen/iconSize"
+        android:layout_height="@dimen/iconSize"
+        android:src="@drawable/ic_if_gitlab_2561443"
+        app:layout_constraintLeft_toRightOf="@id/homeImageView"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/playstoreImageView"/>
 
