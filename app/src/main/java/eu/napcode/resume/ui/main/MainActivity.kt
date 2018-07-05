@@ -95,8 +95,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
 
         when (menuItem.itemId) {
-            R.id.projects -> {
-            }
+            R.id.projects -> {}
+
+            R.id.education -> {}
+
+            R.id.work -> {}
         }
 
         return true

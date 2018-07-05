@@ -4,4 +4,14 @@
         android:id="@+id/projects"
         android:title="@string/projects"
         android:icon="@drawable/ic_projects"/>
+
+    <item
+        android:id="@+id/education"
+        android:title="@string/education"
+        android:icon="@drawable/ic_open_book"/>
+
+    <item
+        android:id="@+id/work"
+        android:title="@string/work"
+        android:icon="@drawable/ic_work"/>
 </menu>
