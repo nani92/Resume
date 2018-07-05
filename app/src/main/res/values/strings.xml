@@ -9,4 +9,7 @@
     <string name="dev_highlights">&lt;b>Highlights&lt;/b> &lt;br/>&lt;br/>%1s</string>
     <string name="dev_contact">Contact\n</string>
     <string name="mail_subject">Android Development</string>
+    <string name="projects">Projects</string>
+    <string name="education">Education</string>
+    <string name="work">Work</string>
 </resources>
