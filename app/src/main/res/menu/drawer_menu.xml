@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <group>
-    </group>
+    <item
+        android:id="@+id/projects"
+        android:title="@string/projects"
+        android:icon="@drawable/ic_projects"/>
 </menu>

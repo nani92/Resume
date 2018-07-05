@@ -12,11 +12,11 @@ import android.transition.Slide
 import android.view.MenuItem
 import dagger.android.AndroidInjection
 import eu.napcode.resume.R
+import eu.napcode.resume.model.Developer
 import eu.napcode.resume.ui.developer.DeveloperFragment
 import eu.napcode.resume.ui.developer.DeveloperViewModel
 import eu.napcode.resume.utils.startSendMailActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.drawer_header.*
 import kotlinx.android.synthetic.main.drawer_header.view.*
 import javax.inject.Inject
 
@@ -47,10 +47,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .get(DeveloperViewModel::class.java)
 
         developerViewModel.developer.observe(this, Observer { developer ->
-            navigationView.getHeaderView(0).developerTextView.text =
-                    getString(R.string.dev_name, developer!!.name, developer.surname)
-            navigationView.getHeaderView(0).mailImageView
-                    .setOnClickListener { startSendMailActivity(this, developer.mail) }
+            displayDeveloperInDrawer(developer!!)
         })
     }
 
@@ -87,7 +84,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return slide
     }
 
-    override fun onNavigationItemSelected(p0: MenuItem): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+    private fun displayDeveloperInDrawer(developer: Developer) {
+        navigationView.getHeaderView(0).developerTextView.text =
+                getString(R.string.dev_name, developer.name, developer.surname)
+        navigationView.getHeaderView(0).mailImageView
+                .setOnClickListener { startSendMailActivity(this, developer.mail) }
+    }
+
+    override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
+
+        when (menuItem.itemId) {
+            R.id.projects -> {
+            }
+        }
+
+        return true
     }
 }
