@@ -1,5 +1,8 @@
 package eu.napcode.resume.ui.main
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProvider
+import android.arch.lifecycle.ViewModelProviders
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.NavigationView
@@ -13,13 +16,22 @@ import eu.napcode.resume.R
 import eu.napcode.resume.model.Developer
 import eu.napcode.resume.repository.DeveloperRepository
 import eu.napcode.resume.ui.developer.DeveloperFragment
+import eu.napcode.resume.ui.developer.DeveloperViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.drawer_header.*
+import kotlinx.android.synthetic.main.drawer_header.view.*
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var drawerToggle: ActionBarDrawerToggle
     private lateinit var fragmentToSet: Fragment
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    private lateinit var developerViewModel: DeveloperViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +45,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             displayFirstFragment()
         }
 
+        developerViewModel = ViewModelProviders.of(this, viewModelFactory)
+                .get(DeveloperViewModel::class.java)
+
+        developerViewModel.developer.observe(this, Observer { developer ->
+            navigationView.getHeaderView(0).developerTextView.text = getString(R.string.dev_name, developer!!.name, developer.surname)
+        })
     }
 
     private fun setupDrawer() {

@@ -28,6 +28,7 @@ class DeveloperFragment : Fragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
+
     private lateinit var developerViewModel: DeveloperViewModel
 
     override fun onAttach(context: Context?) {
