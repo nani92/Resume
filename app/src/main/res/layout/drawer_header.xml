@@ -10,6 +10,16 @@
     android:padding="@dimen/base_margin"
     android:paddingTop="?android:attr/actionBarSize">
 
+    <ImageView
+        android:id="@+id/mailImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foreground="?selectableItemBackground"
+        android:padding="@dimen/base_margin"
+        android:src="@drawable/ic_mail_black_24dp"
+        android:tint="@android:color/white"
+        app:layout_constraintRight_toRightOf="parent"/>
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/devAvatarImageView"
         android:layout_width="96dp"

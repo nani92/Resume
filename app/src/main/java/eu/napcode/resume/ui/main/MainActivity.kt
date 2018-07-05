@@ -11,12 +11,10 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.transition.Slide
 import android.view.MenuItem
 import dagger.android.AndroidInjection
-import eu.napcode.developerdataprovider.LocalDataProvider
 import eu.napcode.resume.R
-import eu.napcode.resume.model.Developer
-import eu.napcode.resume.repository.DeveloperRepository
 import eu.napcode.resume.ui.developer.DeveloperFragment
 import eu.napcode.resume.ui.developer.DeveloperViewModel
+import eu.napcode.resume.utils.startSendMailActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.drawer_header.*
 import kotlinx.android.synthetic.main.drawer_header.view.*
@@ -49,7 +47,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .get(DeveloperViewModel::class.java)
 
         developerViewModel.developer.observe(this, Observer { developer ->
-            navigationView.getHeaderView(0).developerTextView.text = getString(R.string.dev_name, developer!!.name, developer.surname)
+            navigationView.getHeaderView(0).developerTextView.text =
+                    getString(R.string.dev_name, developer!!.name, developer.surname)
+            navigationView.getHeaderView(0).mailImageView
+                    .setOnClickListener { startSendMailActivity(this, developer.mail) }
         })
     }
 
