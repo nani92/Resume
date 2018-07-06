@@ -12,4 +12,10 @@ class LocalDataProvider(context: Context) {
 
         return Gson().fromJson(devString, objectClass)
     }
+
+    fun getEducations(objectClass: Class<*>): Any {
+        var educationsString = rawFileReader.readFile(R.raw.education)
+
+        return Gson().fromJson(educationsString, objectClass)
+    }
 }

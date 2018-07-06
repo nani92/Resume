@@ -1,26 +1,25 @@
-{
-  "education": [
-    {
-      "id": 0,
-      "startYear": 2011,
-      "startMonth": 10,
-      "endYear": 2016,
-      "endMonth": 1,
-      "field": "Informatics",
-      "school": "Gdańsk University of Technology",
-      "title": "BSc"
-    },
-    {
-      "id": 1,
-      "startYear": 2008,
-      "endYear": 2011,
-      "school": "High School No. 9 in Gdynia"
-    },
-    {
-      "id": 2,
-      "endYear": 2018,
-      "school": "Udacity",
-      "field": "Android Developer Nanodegree by Google"
-    }
-  ]
-}
+[
+  {
+    "id": 0,
+    "startYear": 2011,
+    "startMonth": 10,
+    "endYear": 2016,
+    "endMonth": 1,
+    "field": "Informatics",
+    "school": "Gdańsk University of Technology",
+    "title": "BSc"
+  },
+  {
+    "id": 1,
+    "startYear": 2008,
+    "endYear": 2011,
+    "school": "High School No. 9 in Gdynia"
+  },
+  {
+    "id": 2,
+    "endYear": 2018,
+    "school": "Udacity",
+    "field": "Android Developer Nanodegree by Google"
+  }
+]
+
