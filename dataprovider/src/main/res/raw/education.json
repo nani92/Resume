@@ -3,10 +3,10 @@
     {
       "id": 0,
       "startYear": 2011,
-      "startMonth": "October",
+      "startMonth": 10,
       "endYear": 2016,
-      "endMonth": "January",
-      "fields": "Informatics",
+      "endMonth": 1,
+      "field": "Informatics",
       "school": "Gdańsk University of Technology",
       "title": "BSc"
     },
@@ -20,7 +20,7 @@
       "id": 2,
       "endYear": 2018,
       "school": "Udacity",
-      "fields": "Android Developer Nanodegree by Google"
+      "field": "Android Developer Nanodegree by Google"
     }
   ]
 }
