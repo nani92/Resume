@@ -1,6 +1,7 @@
 package eu.napcode.resume.model
 
 import android.support.annotation.Nullable
+import eu.napcode.resume.entity.EducationEntity
 
 data class Education(val id: Int,
                      @Nullable
@@ -15,4 +16,9 @@ data class Education(val id: Int,
                      val field: String,
                      val school: String,
                      @Nullable
-                     val title: String)
+                     val title: String) {
+
+    constructor(entity: EducationEntity) :
+            this(entity.id, entity.startYear, entity.startMonth, entity.endYear,
+                    entity.endMonth, entity.field, entity.school, entity.title)
+}
