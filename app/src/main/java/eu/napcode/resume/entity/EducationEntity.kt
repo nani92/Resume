@@ -12,24 +12,24 @@ data class EducationEntity(
         val id: Int,
 
         @Nullable
-        val startYear: Int,
+        val startYear: Int?,
 
         @Nullable
-        val startMonth: Int,
+        val startMonth: Int?,
 
         @Nullable
-        val endYear: Int,
+        val endYear: Int?,
 
         @Nullable
-        val endMonth: Int,
+        val endMonth: Int?,
 
         @Nullable
-        val field: String,
+        val field: String?,
 
         val school: String,
 
         @Nullable
-        val title: String
+        val title: String?
 ) {
     constructor(education: Education) :
             this(education.id, education.startYear, education.startMonth, education.endYear,

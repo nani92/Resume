@@ -10,14 +10,16 @@ import eu.napcode.resume.model.Education
 import eu.napcode.resume.repository.DeveloperRepository
 import eu.napcode.resume.ui.main.MainActivity
 import javax.inject.Inject
-import android.provider.MediaStore.Video
-import android.util.Log
+import eu.napcode.resume.repository.EducationRepository
 
 
 class SplashActivity : AppCompatActivity() {
 
     @Inject
     lateinit var developerRepository : DeveloperRepository
+
+    @Inject
+    lateinit var educationRepository : EducationRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +39,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun loadProvidedEducationData() {
         var edu = LocalDataProvider(this).getEducations(Array<Education>::class.java)
-        Log.d("N", edu.toString())
+
+        educationRepository.saveEducations(edu as Array<Education>)
     }
 }

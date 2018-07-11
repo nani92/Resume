@@ -12,6 +12,12 @@ import javax.inject.Inject
 class EducationRepository
 @Inject constructor(private val educationDao: EducationDao, private val scheduler: RxSchedulers) {
 
+    public fun saveEducations(educations: Array<Education>): Completable {
+        return Completable
+                .fromAction { educations.forEach { educationDao.insert(EducationEntity(it)) } }
+                .subscribeOn(scheduler.io())
+    }
+
     public fun saveEducation(education: Education): Completable {
         return Completable
                 .fromAction { educationDao.insert(EducationEntity(education)) }
@@ -20,7 +26,7 @@ class EducationRepository
 
     public fun getEducations(): LiveData<List<Education>> {
         return Transformations.map(educationDao.load()) { input ->
-            input.mapIndexed{ _, educationEntity -> Education(educationEntity) }
+            input.mapIndexed { _, educationEntity -> Education(educationEntity) }
         }
     }
 }
