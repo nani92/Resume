@@ -31,9 +31,9 @@ data class EducationEntity(
         @Nullable
         val title: String
 ) {
-        constructor(education: Education) :
-                this(education.id, education.startYear, education.startMonth, education.endYear,
-                        education.endMonth, education.field, education.school, education.title)
+    constructor(education: Education) :
+            this(education.id, education.startYear, education.startMonth, education.endYear,
+                    education.endMonth, education.field, education.school, education.title)
 }
 
 

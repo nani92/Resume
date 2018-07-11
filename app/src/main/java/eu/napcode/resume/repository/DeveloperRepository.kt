@@ -14,7 +14,7 @@ class DeveloperRepository
 @Inject constructor(private val developerDao: DeveloperDao, private val scheduler: RxSchedulers) {
 
     public fun getDeveloper(id: Int) : LiveData<Developer> {
-        return Transformations.map(developerDao.load(id), { Developer(it) })
+        return Transformations.map(developerDao.load(id)) { Developer(it) }
     }
 
     public fun saveDeveloper(developer: Developer) : Completable {
