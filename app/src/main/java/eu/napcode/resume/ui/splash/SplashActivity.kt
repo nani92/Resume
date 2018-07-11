@@ -12,7 +12,6 @@ import eu.napcode.resume.ui.main.MainActivity
 import javax.inject.Inject
 import eu.napcode.resume.repository.EducationRepository
 
-
 class SplashActivity : AppCompatActivity() {
 
     @Inject
