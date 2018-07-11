@@ -7,10 +7,10 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
+import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.transition.Slide
-import android.view.Gravity
 import android.view.MenuItem
 import android.view.View
 import dagger.android.AndroidInjection
@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
-        drawerLayout.closeDrawer(Gravity.START)
+        drawerLayout.closeDrawer(GravityCompat.START)
 
         when (menuItem.itemId) {
 
@@ -125,7 +125,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
             else -> return false
+        }
+    }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
         }
     }
 }
