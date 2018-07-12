@@ -37,6 +37,13 @@ class EducationAdapter(private val educations: List<Education>?, public val cont
                 educationTitleTextView.visibility = VISIBLE
                 educationTitleTextView.text = education.title
             }
+
+            var imageIdName = context.getString(R.string.education_image_id_name, education.id)
+            var imageId = context.resources.getIdentifier(imageIdName, "drawable", context.packageName)
+
+            if ( imageId != 0) {
+                itemView.educationImageView.setImageDrawable(context.getDrawable(imageId))
+            }
         }
     }
 
