@@ -39,6 +39,6 @@ class SplashActivity : AppCompatActivity() {
     private fun loadProvidedEducationData() {
         var edu = LocalDataProvider(this).getEducations(Array<Education>::class.java)
 
-        educationRepository.saveEducations(edu as Array<Education>)
+        educationRepository.saveEducations(edu as Array<Education>).subscribe()
     }
 }

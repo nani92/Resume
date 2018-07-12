@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="@dimen/base_margin">
 
     <ImageView
@@ -21,8 +21,8 @@
         android:id="@+id/educationTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/base_margin"
         android:layout_marginEnd="@dimen/base_margin"
+        android:layout_marginStart="@dimen/base_margin"
         android:textSize="@dimen/secondaryHeaderTextSize"
         app:layout_constraintLeft_toRightOf="@id/imageGuideline"
         app:layout_constraintRight_toLeftOf="@id/educationTitleTextView"
@@ -33,8 +33,8 @@
         android:id="@+id/educationDatesTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/base_margin"
         android:layout_marginEnd="@dimen/base_margin"
+        android:layout_marginStart="@dimen/base_margin"
         android:textSize="@dimen/primaryTextSize"
         app:layout_constraintLeft_toRightOf="@id/imageGuideline"
         app:layout_constraintRight_toLeftOf="@id/educationTitleTextView"
@@ -54,11 +54,21 @@
         tools:text="BSc"
         tools:visibility="visible"/>
 
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/small_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:background="@color/colorPrimary"
+        app:layout_constraintLeft_toRightOf="@id/imageGuideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/educationImageView"/>
+
     <android.support.constraint.Guideline
         android:id="@+id/imageGuideline"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25"/>
+        app:layout_constraintGuide_percent="0.2"/>
 
 </android.support.constraint.ConstraintLayout>

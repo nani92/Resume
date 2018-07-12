@@ -11,5 +11,4 @@ class DeveloperViewModel
 @Inject constructor(private val developerRepository: DeveloperRepository) : ViewModel() {
 
     val developer : LiveData<Developer> = developerRepository.getDeveloper(BuildConfig.developerId)
-
 }

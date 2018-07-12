@@ -8,7 +8,7 @@ import eu.napcode.resume.R
 import eu.napcode.resume.model.Education
 import kotlinx.android.synthetic.main.item_education.view.*
 
-class EducationAdapter(private val educations: List<Education>) : RecyclerView.Adapter<EducationAdapter.ViewHolder>() {
+class EducationAdapter(private val educations: List<Education>?) : RecyclerView.Adapter<EducationAdapter.ViewHolder>() {
 
     private fun ViewGroup.inflate(layoutRes: Int): View {
         return LayoutInflater.from(context).inflate(layoutRes, this, false)
@@ -16,9 +16,9 @@ class EducationAdapter(private val educations: List<Education>) : RecyclerView.A
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, index: Int) = ViewHolder(viewGroup.inflate(R.layout.item_education))
 
-    override fun getItemCount() = educations.size
+    override fun getItemCount() = educations!!.size
 
-    override fun onBindViewHolder(holder: ViewHolder, index: Int) = holder.bind(educations[index])
+    override fun onBindViewHolder(holder: ViewHolder, index: Int) = holder.bind(educations!![index])
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
