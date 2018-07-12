@@ -4,6 +4,8 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import eu.napcode.resume.R
 import eu.napcode.resume.model.Education
@@ -29,6 +31,12 @@ class EducationAdapter(private val educations: List<Education>?, public val cont
             itemView.educationTextView.text = educationStyler.getEducationSpannable()
             itemView.educationDatesTextView.text = educationStyler.getDatesSpannable()
 
+            if (education.title.isNullOrBlank()) {
+                educationTitleTextView.visibility = GONE
+            } else{
+                educationTitleTextView.visibility = VISIBLE
+                educationTitleTextView.text = education.title
+            }
         }
     }
 
