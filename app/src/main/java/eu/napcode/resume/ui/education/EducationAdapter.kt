@@ -24,7 +24,11 @@ class EducationAdapter(private val educations: List<Education>?, public val cont
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(education: Education) = with(itemView) {
-            itemView.educationTextView.text = EducationStyler(context).getEducationSpannable(education)
+            var educationStyler = EducationStyler(context, education)
+
+            itemView.educationTextView.text = educationStyler.getEducationSpannable()
+            itemView.educationDatesTextView.text = educationStyler.getDatesSpannable()
+
         }
     }
 
