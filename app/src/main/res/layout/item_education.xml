@@ -62,7 +62,7 @@
         android:background="@color/colorPrimary"
         app:layout_constraintLeft_toRightOf="@id/imageGuideline"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/educationImageView"/>
+        app:layout_constraintTop_toBottomOf="@id/educationBarrier"/>
 
     <android.support.constraint.Guideline
         android:id="@+id/imageGuideline"
@@ -70,5 +70,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.2"/>
+
+    <android.support.constraint.Barrier
+        android:id="@+id/educationBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="educationImageView,educationTextView,educationDatesTextView,educationTitleTextView"/>
 
 </android.support.constraint.ConstraintLayout>
