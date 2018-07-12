@@ -41,11 +41,7 @@ class EducationFragment: Fragment() {
                 .get(EducationViewModel::class.java)
 
         educationViewModel.educations.observe(this, Observer { educations ->
-            educationRecyclerView.adapter = EducationAdapter(educations)
+            educationRecyclerView.adapter = EducationAdapter(educations, context!!)
         })
-    }
-
-    fun setupRecyclerView() {
-        educationRecyclerView.layoutManager = LinearLayoutManager(context)
     }
 }

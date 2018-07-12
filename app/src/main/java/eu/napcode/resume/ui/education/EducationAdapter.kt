@@ -1,5 +1,6 @@
 package eu.napcode.resume.ui.education
 
+import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +9,7 @@ import eu.napcode.resume.R
 import eu.napcode.resume.model.Education
 import kotlinx.android.synthetic.main.item_education.view.*
 
-class EducationAdapter(private val educations: List<Education>?) : RecyclerView.Adapter<EducationAdapter.ViewHolder>() {
+class EducationAdapter(private val educations: List<Education>?, public val context: Context) : RecyclerView.Adapter<EducationAdapter.ViewHolder>() {
 
     private fun ViewGroup.inflate(layoutRes: Int): View {
         return LayoutInflater.from(context).inflate(layoutRes, this, false)
@@ -20,10 +21,10 @@ class EducationAdapter(private val educations: List<Education>?) : RecyclerView.
 
     override fun onBindViewHolder(holder: ViewHolder, index: Int) = holder.bind(educations!![index])
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(education: Education) = with(itemView) {
-            educationTextView.text = education.school
+            itemView.educationTextView.text = EducationStyler(context).getEducationSpannable(education)
         }
     }
 

@@ -12,4 +12,7 @@
     <string name="projects">Projects</string>
     <string name="education">Education</string>
     <string name="work">Work</string>
+
+    <string name="education_problem">There is problem with displaying education.</string>
+    <string name="education_field_at_school">%1s at %2s</string>
 </resources>
