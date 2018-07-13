@@ -2,17 +2,18 @@ package eu.napcode.resume.ui.education
 
 import android.content.Context
 import android.graphics.Typeface
+import android.os.Build
 import android.support.v4.content.ContextCompat
 import android.text.SpannableString
-import android.text.SpannableStringBuilder
-import android.text.TextUtils
 import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import eu.napcode.resume.R
 import eu.napcode.resume.model.Education
 import eu.napcode.resume.utils.spanWith
-import java.text.DateFormatSymbols
+import java.text.SimpleDateFormat
 import java.time.Month
+import java.time.format.TextStyle
+import java.util.*
 
 class EducationStyler(var context: Context, val education: Education) {
     var color = ContextCompat.getColor(context, R.color.colorPrimary)
@@ -64,7 +65,7 @@ class EducationStyler(var context: Context, val education: Education) {
         var monthSpannableString: SpannableString? = null
 
         if (month != null) {
-            var monthString = DateFormatSymbols().months[month - 1]
+            var monthString = getMonthName(month)
             monthSpannableString = SpannableString(monthString)
                     .spanWith(monthString) {
                         what = StyleSpan(Typeface.ITALIC)
@@ -77,6 +78,18 @@ class EducationStyler(var context: Context, val education: Education) {
             monthSpannableString == null -> SpannableString(year.toString())
 
             else -> SpannableString("$monthSpannableString $year")
+        }
+    }
+
+    private fun getMonthName(month: Int) : String {
+
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Month.of(month).getDisplayName(TextStyle.FULL_STANDALONE, Locale.getDefault())
+        } else{
+            val date = Date()
+            date.month = month - 1
+            val dateFormat = SimpleDateFormat("LLLL", Locale.getDefault())
+            dateFormat.format(date)
         }
     }
 }
