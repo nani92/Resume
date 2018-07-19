@@ -6,6 +6,7 @@ import dagger.Module
 import dagger.Provides
 import eu.napcode.resume.dao.DeveloperDao
 import eu.napcode.resume.dao.EducationDao
+import eu.napcode.resume.dao.ProjectDao
 import eu.napcode.resume.db.ResumeDb
 import javax.inject.Singleton
 
@@ -32,5 +33,11 @@ class AppModule {
     @Provides
     fun provideEducationDao(db: ResumeDb): EducationDao {
         return db.educationDao()
+    }
+
+    @Singleton
+    @Provides
+    fun provideProjectDao(db: ResumeDb): ProjectDao {
+        return db.projectDao()
     }
 }

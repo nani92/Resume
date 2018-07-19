@@ -4,6 +4,7 @@ import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase
 import eu.napcode.resume.dao.DeveloperDao
 import eu.napcode.resume.dao.EducationDao
+import eu.napcode.resume.dao.ProjectDao
 
 @Database(
         entities = [
@@ -16,4 +17,5 @@ import eu.napcode.resume.dao.EducationDao
 abstract class ResumeDb : RoomDatabase() {
     abstract fun developerDao(): DeveloperDao
     abstract fun educationDao(): EducationDao
+    abstract fun projectDao() : ProjectDao
 }
