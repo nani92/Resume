@@ -1,0 +1,38 @@
+[
+  {
+    "id": 0,
+    "name": "Resume App",
+    "github": "https://github.com/nani92/Resume",
+    "startYear": 2018,
+    "startMonth": 7,
+    "description": "Awesome App",
+    "tech": [
+      "Kotlin",
+      "Android SDK",
+      "Room",
+      "LiveData",
+      "GSON",
+      "Dagger",
+      "RxKotlin",
+      "RxAndroid",
+      "CircleImageView"
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Baby Pacifier",
+    "playStore": "eu.napcode.kidscalmer",
+    "startYear": 2017,
+    "startMonth": 11,
+    "description": "Another Awesome App",
+    "links": [
+      "https://medium.com/@njastrzebska5/google-udacity-developer-scholarship-challenge-5098cd970a14"
+    ],
+    "tech": [
+      "Kotlin",
+      "Android SDK",
+      "ExoPlayer"
+    ]
+  }
+]
+
