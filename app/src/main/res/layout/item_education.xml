@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/base_margin">
+
+    <ImageView
+        android:id="@+id/educationImageView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_edu_placeholder"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/imageGuideline"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/educationTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/base_margin"
+        android:layout_marginStart="@dimen/base_margin"
+        android:textSize="@dimen/secondaryHeaderTextSize"
+        app:layout_constraintLeft_toRightOf="@id/imageGuideline"
+        app:layout_constraintRight_toLeftOf="@id/educationTitleTextView"
+        app:layout_constraintTop_toTopOf="@id/educationImageView"
+        tools:text="@tools:sample/lorem"/>
+
+    <TextView
+        android:id="@+id/educationDatesTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/base_margin"
+        android:layout_marginStart="@dimen/base_margin"
+        android:textSize="@dimen/primaryTextSize"
+        app:layout_constraintLeft_toRightOf="@id/imageGuideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/educationTextView"
+        tools:text="@tools:sample/lorem"/>
+
+    <TextView
+        android:id="@+id/educationTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/primaryHeaderTextSize"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/educationTextView"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/educationTextView"
+        tools:text="BSc"
+        tools:visibility="visible"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/small_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:background="@color/colorPrimary"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/educationBarrier"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/imageGuideline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <android.support.constraint.Barrier
+        android:id="@+id/educationBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="educationImageView,educationTextView,educationDatesTextView,educationTitleTextView"/>
+
+    <android.support.constraint.Barrier
+        android:id="@+id/datesBelowBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="educationTextView, educationTitleTextView"/>
+
+
+</android.support.constraint.ConstraintLayout>

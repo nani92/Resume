@@ -5,6 +5,7 @@ import android.arch.persistence.room.Room
 import dagger.Module
 import dagger.Provides
 import eu.napcode.resume.dao.DeveloperDao
+import eu.napcode.resume.dao.EducationDao
 import eu.napcode.resume.db.ResumeDb
 import javax.inject.Singleton
 
@@ -25,5 +26,11 @@ class AppModule {
     @Provides
     fun provideDeveloperDao(db: ResumeDb): DeveloperDao {
         return db.developerDao()
+    }
+
+    @Singleton
+    @Provides
+    fun provideEducationDao(db: ResumeDb): EducationDao {
+        return db.educationDao()
     }
 }

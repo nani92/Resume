@@ -7,14 +7,18 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
+import android.support.v4.view.GravityCompat
+import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.transition.Slide
 import android.view.MenuItem
+import android.view.View
 import dagger.android.AndroidInjection
 import eu.napcode.resume.R
 import eu.napcode.resume.model.Developer
 import eu.napcode.resume.ui.developer.DeveloperFragment
 import eu.napcode.resume.ui.developer.DeveloperViewModel
+import eu.napcode.resume.ui.education.EducationFragment
 import eu.napcode.resume.utils.startSendMailActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.drawer_header.view.*
@@ -29,7 +33,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     private lateinit var developerViewModel: DeveloperViewModel
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,10 +59,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 drawerLayout, toolbar,
                 R.string.open_drawer, R.string.close_drawer)
 
-        drawerLayout.addDrawerListener(this.drawerToggle)
-        this.drawerToggle.syncState()
+        drawerLayout.addDrawerListener(drawerToggle)
+        drawerToggle.syncState()
 
         navigationView.setNavigationItemSelectedListener(this)
+
+        drawerLayout.addDrawerListener(object : DrawerLayout.DrawerListener {
+
+            override fun onDrawerStateChanged(p0: Int) {}
+
+            override fun onDrawerSlide(p0: View, p1: Float) {}
+
+            override fun onDrawerOpened(p0: View) {}
+
+            override fun onDrawerClosed(drawerView: View) = displayFragment()
+        })
     }
 
     private fun displayFirstFragment() {
@@ -84,7 +98,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return slide
     }
 
-
     private fun displayDeveloperInDrawer(developer: Developer) {
         navigationView.getHeaderView(0).developerTextView.text =
                 getString(R.string.dev_name, developer.name, developer.surname)
@@ -93,15 +106,35 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
+        drawerLayout.closeDrawer(GravityCompat.START)
 
         when (menuItem.itemId) {
-            R.id.projects -> {}
 
-            R.id.education -> {}
+            R.id.projects -> {
+                return true
+            }
 
-            R.id.work -> {}
+            R.id.education -> {
+                fragmentToSet = EducationFragment()
+
+                return true
+            }
+
+            R.id.work -> {
+                return true
+            }
+
+            else -> return false
         }
+    }
 
-        return true
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
     }
 }

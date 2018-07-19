@@ -2,16 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/projects"
-        android:title="@string/projects"
-        android:icon="@drawable/ic_projects"/>
+        android:checkable="true"
+        android:icon="@drawable/ic_projects"
+        android:title="@string/projects"/>
 
     <item
         android:id="@+id/education"
-        android:title="@string/education"
-        android:icon="@drawable/ic_open_book"/>
+        android:checkable="true"
+        android:icon="@drawable/ic_open_book"
+        android:title="@string/education"/>
 
     <item
         android:id="@+id/work"
-        android:title="@string/work"
-        android:icon="@drawable/ic_work"/>
+        android:checkable="true"
+        android:icon="@drawable/ic_work"
+        android:title="@string/work"/>
 </menu>
