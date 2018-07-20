@@ -19,9 +19,9 @@ class LocalDataProvider(context: Context) {
         return Gson().fromJson(educationsString, objectClass)
     }
 
-    fun getProjects(objectClass: Class<*>) : Any {
+    fun getProjects(gson: Gson, objectClass: Class<*>) : Any {
         var projectsString = rawFileReader.readFile(R.raw.projects)
 
-        return Gson().fromJson(projectsString, objectClass)
+        return gson.fromJson(projectsString, objectClass)
     }
 }

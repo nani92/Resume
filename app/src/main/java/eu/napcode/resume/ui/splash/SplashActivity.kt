@@ -3,11 +3,10 @@ package eu.napcode.resume.ui.splash
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.google.gson.GsonBuilder
 import dagger.android.AndroidInjection
 import eu.napcode.developerdataprovider.LocalDataProvider
-import eu.napcode.resume.model.Developer
-import eu.napcode.resume.model.Education
-import eu.napcode.resume.model.Project
+import eu.napcode.resume.model.*
 import eu.napcode.resume.repository.DeveloperRepository
 import eu.napcode.resume.ui.main.MainActivity
 import javax.inject.Inject
@@ -17,10 +16,10 @@ import eu.napcode.resume.repository.ProjectRepository
 class SplashActivity : AppCompatActivity() {
 
     @Inject
-    lateinit var developerRepository : DeveloperRepository
+    lateinit var developerRepository: DeveloperRepository
 
     @Inject
-    lateinit var educationRepository : EducationRepository
+    lateinit var educationRepository: EducationRepository
 
     @Inject
     lateinit var projectRepository: ProjectRepository
@@ -49,8 +48,13 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun loadProvidedProjectData() {
-        var projects = LocalDataProvider(this).getProjects(Array<Project>::class.java)
+        var projects = LocalDataProvider(this)
+                .getProjects(
+                        GsonBuilder()
+                                .registerTypeAdapter(ProjectType::class.java, ProjectTypeDeserializer())
+                                .create(),
+                        Array<Project>::class.java)
 
-        projectRepository.saveProjects(projects as Array<Project>)
+        projectRepository.saveProjects(projects as Array<Project>).subscribe()
     }
 }

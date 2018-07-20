@@ -11,7 +11,7 @@ class TechConverters {
 
     @TypeConverter
     fun fromString(value: String): Array<String>? {
-        val listType = object : TypeToken<ArrayList<String>>() {}.type
+        val listType = object : TypeToken<Array<String>>() {}.type
 
         return Gson().fromJson<Array<String>>(value, listType)
     }
