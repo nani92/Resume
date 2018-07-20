@@ -1,4 +1,4 @@
-package eu.napcode.resume.ui.projects
+package eu.napcode.resume.ui.projects.display
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProvider
@@ -58,7 +58,7 @@ class DisplayProjectsFragment : Fragment() {
         projectsViewModel
                 .getProjects(arguments!!.getSerializable(ARG_PROJECT_TYPE) as ProjectType)
                 .observe(this, Observer { projects ->
-                    projectsRecyclerView.adapter = ProjectsAdapter(projects)
+                    projectsRecyclerView.adapter = DisplayProjectsAdapter(projects)
                 })
     }
 }

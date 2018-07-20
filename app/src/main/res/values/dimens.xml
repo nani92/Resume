@@ -11,4 +11,5 @@
     <dimen name="fab_size">56dp</dimen>
     <dimen name="iconSize">48dp</dimen>
     <dimen name="small_margin">8dp</dimen>
+    <dimen name="devImageSize">96dp</dimen>
 </resources>

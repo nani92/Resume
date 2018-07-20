@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import eu.napcode.resume.model.ProjectType
-import eu.napcode.resume.ui.projects.DisplayProjectsFragment.Companion.newInstance
+import eu.napcode.resume.ui.projects.display.DisplayProjectsFragment.Companion.newInstance
 
 class ProjectsPagerAdapter(private var titles: Array<String>, fm: FragmentManager?) : FragmentPagerAdapter(fm) {
 

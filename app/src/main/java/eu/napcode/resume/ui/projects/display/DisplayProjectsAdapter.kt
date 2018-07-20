@@ -1,4 +1,4 @@
-package eu.napcode.resume.ui.projects
+package eu.napcode.resume.ui.projects.display
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import eu.napcode.resume.R
 import eu.napcode.resume.model.Project
+import kotlinx.android.synthetic.main.item_project.view.*
 
-class ProjectsAdapter(private val projects: List<Project>?) : RecyclerView.Adapter<ProjectsAdapter.ViewHolder>() {
+class DisplayProjectsAdapter(private val projects: List<Project>?) : RecyclerView.Adapter<DisplayProjectsAdapter.ViewHolder>() {
 
     private fun ViewGroup.inflate(layoutRes: Int): View {
         return LayoutInflater.from(context).inflate(layoutRes, this, false)
@@ -22,7 +23,7 @@ class ProjectsAdapter(private val projects: List<Project>?) : RecyclerView.Adapt
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(project: Project) = with(itemView) {
-
+            itemView.projectNameTextView.text = project.name
         }
     }
 

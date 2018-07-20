@@ -7,7 +7,7 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import eu.napcode.resume.ui.developer.DeveloperViewModel
 import eu.napcode.resume.ui.education.EducationViewModel
-import eu.napcode.resume.ui.projects.DisplayProjectsViewModel
+import eu.napcode.resume.ui.projects.display.DisplayProjectsViewModel
 
 @Module
 interface ViewModelsModule {

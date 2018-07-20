@@ -1,4 +1,4 @@
-package eu.napcode.resume.ui.projects
+package eu.napcode.resume.ui.projects.display
 
 import android.arch.lifecycle.ViewModel
 import eu.napcode.resume.model.ProjectType
