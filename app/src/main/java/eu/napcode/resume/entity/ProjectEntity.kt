@@ -4,6 +4,7 @@ import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 import android.support.annotation.Nullable
 import eu.napcode.resume.model.Project
+import eu.napcode.resume.model.ProjectType
 
 @Entity
 data class ProjectEntity(
@@ -23,7 +24,9 @@ data class ProjectEntity(
         @Nullable
         val description: String?,
 
-        val tech: Array<String>
+        val tech: Array<String>,
+
+        val type: ProjectType = ProjectType.OTHER
 ) {
     constructor(project: Project) : this(
             id = project.id,
@@ -31,7 +34,8 @@ data class ProjectEntity(
             startMonth = project.startMonth,
             name = project.name,
             description = project.description,
-            tech = project.tech
+            tech = project.tech,
+            type = project.type
     )
 }
 

@@ -9,6 +9,7 @@ import eu.napcode.resume.dao.ProjectDao
 import eu.napcode.resume.entity.DeveloperEntity
 import eu.napcode.resume.entity.EducationEntity
 import eu.napcode.resume.entity.ProjectEntity
+import eu.napcode.resume.utils.ProjectTypeConverters
 import eu.napcode.resume.utils.TechConverters
 
 @Database(
@@ -19,7 +20,9 @@ import eu.napcode.resume.utils.TechConverters
         ],
         version = 1,
         exportSchema = false)
-@TypeConverters(TechConverters::class)
+@TypeConverters(
+        TechConverters::class,
+        ProjectTypeConverters::class)
 abstract class ResumeDb : RoomDatabase() {
 
     abstract fun developerDao(): DeveloperDao

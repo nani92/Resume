@@ -19,14 +19,17 @@ data class Project(
         @Nullable
         val description: String?,
 
-        val tech: Array<String>) {
+        val tech: Array<String>,
 
-        constructor(projectEntity: ProjectEntity) : this (
-                id = projectEntity.id,
-                startYear = projectEntity.startYear,
-                startMonth = projectEntity.startMonth,
-                name = projectEntity.name,
-                description =  projectEntity.description,
-                tech = projectEntity.tech
-        )
+        val type: ProjectType = ProjectType.OTHER) {
+
+    constructor(projectEntity: ProjectEntity) : this(
+            id = projectEntity.id,
+            startYear = projectEntity.startYear,
+            startMonth = projectEntity.startMonth,
+            name = projectEntity.name,
+            description = projectEntity.description,
+            tech = projectEntity.tech,
+            type = projectEntity.type
+    )
 }
