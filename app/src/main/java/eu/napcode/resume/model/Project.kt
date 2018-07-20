@@ -19,8 +19,7 @@ data class Project(
         @Nullable
         val description: String?,
 
-        @Nullable
-        val tech: Array<String>?) {
+        val tech: Array<String>) {
 
         constructor(projectEntity: ProjectEntity) : this (
                 id = projectEntity.id,
