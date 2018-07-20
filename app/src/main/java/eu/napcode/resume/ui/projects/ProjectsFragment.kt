@@ -28,7 +28,8 @@ class ProjectsFragment: Fragment() {
     }
 
     private fun getTabTitles(): Array<String> {
-        return arrayOf(getString(R.string.project_own),
+        return arrayOf(
+                getString(R.string.project_own),
                 getString(R.string.project_commercial),
                 getString(R.string.project_opens))
     }

@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.item_education.view.*
 
 class EducationAdapter(private val educations: List<Education>?, public val context: Context) : RecyclerView.Adapter<EducationAdapter.ViewHolder>() {
 
-    private fun ViewGroup.inflate(layoutRes: Int): View {
+    fun ViewGroup.inflate(layoutRes: Int): View {
         return LayoutInflater.from(context).inflate(layoutRes, this, false)
     }
 

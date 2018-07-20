@@ -14,7 +14,11 @@ class ProjectRepository
 
     public fun saveProjects(projects: Array<Project>): Completable {
         return Completable
-                .fromAction { projects.forEach { projectDao.insert(ProjectEntity(it)) } }
+                .fromAction {
+                    projects.forEach {
+                        projectDao.insert(ProjectEntity(it))
+                    }
+                }
                 .subscribeOn(scheduler.io())
     }
 
