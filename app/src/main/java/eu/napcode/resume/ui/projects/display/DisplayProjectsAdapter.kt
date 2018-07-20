@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import eu.napcode.resume.R
 import eu.napcode.resume.model.Project
+import eu.napcode.resume.utils.getDateSpannableString
 import kotlinx.android.synthetic.main.item_project.view.*
 
 class DisplayProjectsAdapter(private val projects: List<Project>?) : RecyclerView.Adapter<DisplayProjectsAdapter.ViewHolder>() {
@@ -24,6 +25,7 @@ class DisplayProjectsAdapter(private val projects: List<Project>?) : RecyclerVie
 
         fun bind(project: Project) = with(itemView) {
             itemView.projectNameTextView.text = project.name
+            itemView.projectDateTextView.text = getDateSpannableString(project.startMonth, project.startYear)
         }
     }
 

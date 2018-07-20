@@ -29,7 +29,7 @@ class EducationAdapter(private val educations: List<Education>?, public val cont
             var educationStyler = EducationStyler(context, education)
 
             itemView.educationTextView.text = educationStyler.getEducationSpannable()
-            itemView.educationDatesTextView.text = educationStyler.getDatesSpannable()
+            itemView.educationDatesTextView.text = educationStyler.getEducationDatesSpannable()
 
             if (education.title.isNullOrBlank()) {
                 educationTitleTextView.visibility = GONE
