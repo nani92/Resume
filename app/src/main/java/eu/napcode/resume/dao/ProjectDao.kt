@@ -13,6 +13,6 @@ abstract class ProjectDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract fun insert(vararg projectEntity: ProjectEntity)
 
-    @Query("SELECT * FROM projectentity ORDER BY startYear, startMonth DESC")
+    @Query("SELECT * FROM projectentity ORDER BY startYear DESC, startMonth DESC")
     abstract fun load(): LiveData<List<ProjectEntity>>
 }
