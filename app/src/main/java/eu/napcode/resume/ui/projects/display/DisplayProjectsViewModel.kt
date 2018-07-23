@@ -8,5 +8,5 @@ import javax.inject.Inject
 class DisplayProjectsViewModel
 @Inject constructor(var projectRepository: ProjectRepository) : ViewModel() {
 
-    fun getProjects(projectType: ProjectType) = projectRepository.getProjects()
+    fun getProjects(projectType: ProjectType) = projectRepository.getProjectsByType(projectType)
 }

@@ -5,6 +5,7 @@ import android.arch.lifecycle.Transformations
 import eu.napcode.resume.dao.ProjectDao
 import eu.napcode.resume.entity.ProjectEntity
 import eu.napcode.resume.model.Project
+import eu.napcode.resume.model.ProjectType
 import eu.napcode.resume.rx.RxSchedulers
 import io.reactivex.Completable
 import javax.inject.Inject
@@ -30,6 +31,12 @@ class ProjectRepository
 
     public fun getProjects(): LiveData<List<Project>> {
         return Transformations.map(projectDao.load()) { input ->
+            input.mapIndexed { _, projectEntity -> Project(projectEntity) }
+        }
+    }
+
+    public fun getProjectsByType(type: ProjectType): LiveData<List<Project>> {
+        return Transformations.map(projectDao.loadByType(type)) { input ->
             input.mapIndexed { _, projectEntity -> Project(projectEntity) }
         }
     }
