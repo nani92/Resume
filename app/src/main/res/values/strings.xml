@@ -23,4 +23,5 @@
     <string name="project_opens">Open Source</string>
     <string name="project_other">Other</string>
     <string name="no_projects">No %1s projects uploaded yet.</string>
+    <string name="commercial_project_at">at %1s</string>
 </resources>

@@ -47,6 +47,18 @@
             app:layout_constraintTop_toBottomOf="@id/projectNameTextView"
             tools:text="@tools:sample/lorem"/>
 
+        <TextView
+            android:id="@+id/companyTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/projectDateTextView"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="@tools:sample/lorem"
+            tools:visibility="visible"/>
+
         <android.support.constraint.Guideline
             android:id="@+id/imageGuideline"
             android:layout_width="match_parent"

@@ -26,7 +26,10 @@ data class ProjectEntity(
 
         val tech: Array<String>,
 
-        val type: ProjectType = ProjectType.OTHER
+        val type: ProjectType = ProjectType.OTHER,
+
+        @Nullable
+        val company: String?
 ) {
     constructor(project: Project) : this(
             id = project.id,
@@ -35,7 +38,8 @@ data class ProjectEntity(
             name = project.name,
             description = project.description,
             tech = project.tech,
-            type = project.type
+            type = project.type,
+            company = project.company
     )
 }
 
