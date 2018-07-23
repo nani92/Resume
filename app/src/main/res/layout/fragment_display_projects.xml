@@ -4,4 +4,4 @@
     android:id="@+id/projectsRecyclerView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="@dimen/base_margin"/>
+    android:paddingTop="@dimen/small_margin"/>
