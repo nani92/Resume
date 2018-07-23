@@ -35,6 +35,19 @@
       "ExoPlayer"
     ],
     "type": "own"
+  },
+  {
+    "id": 3,
+    "name": "Dobre Programy",
+    "playStore": "com.matsuu.dobreprogramy.aplikacjakonkursowa",
+    "startYear": 2016,
+    "startMonth": 9,
+    "description": "Another Awesome App",
+    "tech": [
+      "Java",
+      "Android SDK"
+    ],
+    "type": "commercial"
   }
 ]
 
