@@ -12,8 +12,11 @@ import android.view.View
 import android.view.ViewGroup
 import dagger.android.support.AndroidSupportInjection
 import eu.napcode.resume.R
+import eu.napcode.resume.model.Project
 import eu.napcode.resume.model.ProjectType
+import eu.napcode.resume.utils.getProjectTypeString
 import kotlinx.android.synthetic.main.fragment_display_projects.*
+import kotlinx.android.synthetic.main.fragment_display_projects_empty.*
 import javax.inject.Inject
 
 class DisplayProjectsFragment : Fragment() {
@@ -56,9 +59,30 @@ class DisplayProjectsFragment : Fragment() {
                 .get(DisplayProjectsViewModel::class.java)
 
         projectsViewModel
-                .getProjects(arguments!!.getSerializable(ARG_PROJECT_TYPE) as ProjectType)
+                .getProjects(getProjectType())
                 .observe(this, Observer { projects ->
-                    projectsRecyclerView.adapter = DisplayProjectsAdapter(projects)
+
+                    if (projects!!.isEmpty()) {
+                        displayNoProjects()
+                    } else {
+                        displayProjects(projects)
+                    }
                 })
+    }
+
+    private fun getProjectType(): ProjectType {
+        return arguments!!.getSerializable(ARG_PROJECT_TYPE) as ProjectType
+    }
+
+    private fun displayNoProjects() {
+        emptyLayout.visibility = View.VISIBLE
+        noProjectsTextView.text = context!!.getString(
+                R.string.no_projects,
+                getProjectTypeString(context!!, getProjectType()))
+    }
+
+    private fun displayProjects(projects: List<Project>) {
+        emptyLayout.visibility = View.GONE
+        projectsRecyclerView.adapter = DisplayProjectsAdapter(projects)
     }
 }
