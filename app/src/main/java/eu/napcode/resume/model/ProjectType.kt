@@ -11,7 +11,8 @@ enum class ProjectType {
     OWN,
     COMMERCIAL,
     OPEN_SOURCE,
-    OTHER
+    OTHER,
+    ALL
 }
 
 internal class ProjectTypeDeserializer : JsonDeserializer<ProjectType> {

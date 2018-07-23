@@ -25,10 +25,12 @@ class ProjectsFragment: Fragment() {
     private fun setupViewPager(viewPager: ViewPager) {
         val adapter = ProjectsPagerAdapter(getTabTitles(), fragmentManager)
         viewPager.adapter = adapter
+        viewPager.currentItem = 1
     }
 
     private fun getTabTitles(): Array<String> {
         return arrayOf(
+                "All",
                 getString(R.string.project_own),
                 getString(R.string.project_commercial),
                 getString(R.string.project_opens))

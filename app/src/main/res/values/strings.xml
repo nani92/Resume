@@ -18,6 +18,7 @@
     <string name="education_image_id_name">edu_%1d</string>
     <string name="education_image_id">R.drawable.%1s</string>
 
+    <string name="project_all">All</string>
     <string name="project_own">Own</string>
     <string name="project_commercial">Commercial</string>
     <string name="project_opens">Open Source</string>

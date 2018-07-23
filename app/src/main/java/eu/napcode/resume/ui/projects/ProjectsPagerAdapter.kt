@@ -14,11 +14,13 @@ class ProjectsPagerAdapter(private var titles: Array<String>, fm: FragmentManage
 
         return when (position) {
 
-            0 -> newInstance(ProjectType.OWN)
+            0 -> newInstance(ProjectType.ALL)
 
-            1 -> newInstance(ProjectType.COMMERCIAL)
+            1 -> newInstance(ProjectType.OWN)
 
-            2 -> newInstance(ProjectType.OPEN_SOURCE)
+            2 -> newInstance(ProjectType.COMMERCIAL)
+
+            3 -> newInstance(ProjectType.OPEN_SOURCE)
 
             else -> null
         }
