@@ -28,5 +28,4 @@ class DisplayProjectsAdapter(private val projects: List<Project>?) : RecyclerVie
             itemView.projectDateTextView.text = getDateSpannableString(project.startMonth, project.startYear)
         }
     }
-
 }

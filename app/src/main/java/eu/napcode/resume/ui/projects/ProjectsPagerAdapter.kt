@@ -2,11 +2,11 @@ package eu.napcode.resume.ui.projects
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
+import android.support.v4.app.FragmentStatePagerAdapter
 import eu.napcode.resume.model.ProjectType
 import eu.napcode.resume.ui.projects.display.DisplayProjectsFragment.Companion.newInstance
 
-class ProjectsPagerAdapter(private var titles: Array<String>, fm: FragmentManager?) : FragmentPagerAdapter(fm) {
+class ProjectsPagerAdapter(private var titles: Array<String>, fm: FragmentManager?) : FragmentStatePagerAdapter(fm) {
 
     override fun getCount() = titles.size
 
