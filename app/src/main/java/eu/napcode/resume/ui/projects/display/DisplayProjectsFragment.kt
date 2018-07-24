@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -14,6 +15,7 @@ import dagger.android.support.AndroidSupportInjection
 import eu.napcode.resume.R
 import eu.napcode.resume.model.Project
 import eu.napcode.resume.model.ProjectType
+import eu.napcode.resume.ui.project_details.ProjectActivity
 import eu.napcode.resume.utils.getProjectTypeString
 import kotlinx.android.synthetic.main.fragment_display_projects.*
 import kotlinx.android.synthetic.main.fragment_display_projects_empty.*
@@ -83,6 +85,11 @@ class DisplayProjectsFragment : Fragment() {
 
     private fun displayProjects(projects: List<Project>) {
         emptyLayout.visibility = View.GONE
-        projectsRecyclerView.adapter = DisplayProjectsAdapter(projects)
+        projectsRecyclerView.adapter = DisplayProjectsAdapter(projects) {
+            var intent = Intent(context, ProjectActivity::class.java)
+            intent.putExtra(ProjectActivity.ARG_PROJECT, it)
+
+            startActivity(intent)
+        }
     }
 }

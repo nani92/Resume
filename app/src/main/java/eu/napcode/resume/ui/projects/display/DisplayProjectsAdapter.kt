@@ -12,7 +12,7 @@ import eu.napcode.resume.model.ProjectType.COMMERCIAL
 import eu.napcode.resume.utils.getDateSpannableString
 import kotlinx.android.synthetic.main.item_project.view.*
 
-class DisplayProjectsAdapter(private val projects: List<Project>?) : RecyclerView.Adapter<DisplayProjectsAdapter.ViewHolder>() {
+class DisplayProjectsAdapter(private val projects: List<Project>?, val listener: (Project) -> Unit) : RecyclerView.Adapter<DisplayProjectsAdapter.ViewHolder>() {
 
     private fun ViewGroup.inflate(layoutRes: Int): View {
         return LayoutInflater.from(context).inflate(layoutRes, this, false)
@@ -22,15 +22,17 @@ class DisplayProjectsAdapter(private val projects: List<Project>?) : RecyclerVie
 
     override fun getItemCount() = projects!!.size
 
-    override fun onBindViewHolder(holder: ViewHolder, index: Int) = holder.bind(projects!![index])
+    override fun onBindViewHolder(holder: ViewHolder, index: Int) = holder.bind(projects!![index], listener)
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(project: Project) = with(itemView) {
+        fun bind(project: Project, listener: (Project) -> Unit) = with(itemView) {
             itemView.projectNameTextView.text = project.name
             itemView.projectDateTextView.text = getDateSpannableString(project.startMonth, project.startYear)
 
             manageCompanyDisplaying(context, project)
+
+            setOnClickListener { listener(project) }
         }
 
         private fun manageCompanyDisplaying(context: Context, project: Project) {
