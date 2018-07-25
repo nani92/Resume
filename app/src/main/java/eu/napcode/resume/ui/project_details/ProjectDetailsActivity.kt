@@ -7,6 +7,7 @@ import android.view.View.VISIBLE
 import dagger.android.AndroidInjection
 import eu.napcode.resume.R
 import eu.napcode.resume.model.Project
+import eu.napcode.resume.utils.getDateSpannableString
 import eu.napcode.resume.utils.getProjectTypeString
 import eu.napcode.resume.utils.startAppPlayStoreActivity
 import eu.napcode.resume.utils.startWebActivity
@@ -36,9 +37,15 @@ class ProjectActivity : AppCompatActivity() {
     fun displayProject(project: Project) {
         appBarProjectTitleTextView.text = project.name
         projectTitleTextView.text = project.name
+
         projectTypeTextView.text = getString(
                 R.string.project_type,
                 getProjectTypeString(this, project.type)
+        )
+
+        projectStartDateTextView.text = getString(
+                R.string.development_started,
+                getDateSpannableString(month = project.startMonth, year = project.startYear)
         )
 
         if (project.company != null) {
