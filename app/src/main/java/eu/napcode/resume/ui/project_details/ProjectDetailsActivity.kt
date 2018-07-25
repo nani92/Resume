@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import dagger.android.AndroidInjection
 import eu.napcode.resume.R
 import eu.napcode.resume.model.Project
+import eu.napcode.resume.utils.getProjectTypeString
 import kotlinx.android.synthetic.main.activity_project_details.*
 
 class ProjectActivity : AppCompatActivity() {
@@ -26,6 +27,10 @@ class ProjectActivity : AppCompatActivity() {
 
         appBarProjectTitleTextView.text = project.name
         projectTitleTextView.text = project.name
+        projectTypeTextView.text = getString(
+                R.string.project_type,
+                getProjectTypeString(this, project.type)
+        )
 
         var begin = (topGuideline.layoutParams as ConstraintLayout.LayoutParams).guideBegin
         topGuideline.setGuidelineBegin(begin + resources.getDimension(R.dimen.base_margin).toInt())

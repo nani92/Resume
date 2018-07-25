@@ -51,6 +51,44 @@
         app:layout_constraintTop_toTopOf="@id/projectImageView"
         tools:text="@tools:sample/lorem"/>
 
+    <!--TODO change to chips-->
+    <TextView
+        android:id="@+id/projectTypeTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/projectTitleTextView"
+        app:layout_constraintRight_toLeftOf="@id/rightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/projectTitleTextView"
+        tools:text="@tools:sample/lorem"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/playStoreFAB"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:contentDescription="@string/cd_go_to_playstore"
+        android:src="@drawable/ic_playstore"
+        android:tint="@android:color/white"
+        android:visibility="gone"
+        app:layout_constraintRight_toLeftOf="@id/rightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/projectTypeTextView"
+        tools:visibility="visible"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/githubFAB"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:contentDescription="@string/cd_go_to_playstore"
+        android:src="@drawable/ic_github"
+        android:tint="@android:color/white"
+        android:visibility="gone"
+        app:layout_constraintRight_toLeftOf="@id/playStoreFAB"
+        app:layout_constraintTop_toBottomOf="@id/projectTypeTextView"
+        tools:visibility="visible"/>
+
     <android.support.constraint.Guideline
         android:id="@+id/leftGuideline"
         android:layout_width="wrap_content"
