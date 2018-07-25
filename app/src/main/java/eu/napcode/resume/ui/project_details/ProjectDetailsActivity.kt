@@ -62,5 +62,7 @@ class ProjectActivity : AppCompatActivity() {
             playStoreFAB.setOnClickListener{ startAppPlayStoreActivity(this, project.playstore) }
             playStoreFAB.visibility = VISIBLE
         }
+
+        descriptionTextView.text = project.description
     }
 }
