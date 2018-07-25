@@ -28,6 +28,7 @@
     <string name="project_type">Project type: %1s</string>
     <string name="development_started">Started: %1s</string>
     <string name="description">Description</string>
+    <string name="tech">Tech</string>
 
     <string name="cd_go_to_playstore">Go to PlayStore</string>
     <string name="cd_go_to_github">Go to GitHub</string>

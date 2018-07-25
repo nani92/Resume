@@ -2,6 +2,7 @@ package eu.napcode.resume.ui.project_details
 
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
+import android.support.design.chip.Chip
 import android.support.v7.app.AppCompatActivity
 import android.view.View.VISIBLE
 import dagger.android.AndroidInjection
@@ -64,5 +65,14 @@ class ProjectActivity : AppCompatActivity() {
         }
 
         descriptionTextView.text = project.description
+
+        for (tech in project.tech) {
+            var chip = Chip(this)
+            chip.text = tech
+            var padding = resources.getDimension(R.dimen.base_margin).toInt()
+            chip.setPadding(padding, padding, padding, padding)
+
+            techChipGroup.addView(chip)
+        }
     }
 }
