@@ -25,4 +25,8 @@
     <string name="project_other">Other</string>
     <string name="no_projects">No %1s projects uploaded yet.</string>
     <string name="commercial_project_at">at %1s</string>
+    <string name="project_type">Project type: %1s</string>
+
+    <string name="cd_go_to_playstore">Go to PlayStore</string>
+    <string name="cd_go_to_github">Go to GitHub</string>
 </resources>

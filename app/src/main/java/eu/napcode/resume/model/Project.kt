@@ -3,9 +3,10 @@ package eu.napcode.resume.model
 import android.os.Parcel
 import android.os.Parcelable
 import android.support.annotation.Nullable
+import com.google.gson.annotations.SerializedName
 import eu.napcode.resume.entity.ProjectEntity
 
-data class Project (
+data class Project(
 
         val id: Int,
 
@@ -26,7 +27,17 @@ data class Project (
         val type: ProjectType = ProjectType.OTHER,
 
         @Nullable
-        val company: String?) : Parcelable{
+        val company: String?,
+
+        @Nullable
+        val github: String?,
+
+        @Nullable
+        @SerializedName("playStore")
+        val playstore: String?,
+
+        @Nullable
+        val links: Array<String>) : Parcelable {
 
     constructor(parcel: Parcel) : this(
             parcel.readInt(),
@@ -36,7 +47,10 @@ data class Project (
             parcel.readString(),
             parcel.createStringArray(),
             parcel.readParcelable(ProjectType::class.java.classLoader),
-            parcel.readString()) {
+            parcel.readString(),
+            parcel.readString(),
+            parcel.readString(),
+            parcel.createStringArray()) {
     }
 
     constructor(projectEntity: ProjectEntity) : this(
@@ -47,7 +61,10 @@ data class Project (
             description = projectEntity.description,
             tech = projectEntity.tech,
             type = projectEntity.type,
-            company = projectEntity.company
+            company = projectEntity.company,
+            github = projectEntity.github,
+            links = projectEntity.links,
+            playstore = projectEntity.playstore
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -59,6 +76,9 @@ data class Project (
         parcel.writeStringArray(tech)
         parcel.writeParcelable(type, flags)
         parcel.writeString(company)
+        parcel.writeString(github)
+        parcel.writeString(playstore)
+        parcel.writeStringArray(links)
     }
 
     override fun describeContents(): Int {
