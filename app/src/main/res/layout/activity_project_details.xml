@@ -61,6 +61,17 @@
         app:layout_constraintTop_toBottomOf="@id/projectTitleTextView"
         tools:text="@tools:sample/lorem"/>
 
+    <TextView
+        android:id="@+id/projectCompanyTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@id/projectTitleTextView"
+        app:layout_constraintRight_toLeftOf="@id/rightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/projectTypeTextView"
+        tools:text="@tools:sample/lorem"
+        tools:visibility="visible"/>
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/playStoreFAB"
         android:layout_width="@dimen/fab_size"
@@ -72,7 +83,7 @@
         android:tint="@android:color/white"
         android:visibility="gone"
         app:layout_constraintRight_toLeftOf="@id/rightGuideline"
-        app:layout_constraintTop_toBottomOf="@id/projectTypeTextView"
+        app:layout_constraintTop_toBottomOf="@id/projectCompanyTextView"
         tools:visibility="visible"/>
 
     <android.support.design.widget.FloatingActionButton
@@ -86,7 +97,7 @@
         android:tint="@android:color/white"
         android:visibility="gone"
         app:layout_constraintRight_toLeftOf="@id/playStoreFAB"
-        app:layout_constraintTop_toBottomOf="@id/projectTypeTextView"
+        app:layout_constraintTop_toBottomOf="@id/projectCompanyTextView"
         tools:visibility="visible"/>
 
     <android.support.constraint.Guideline

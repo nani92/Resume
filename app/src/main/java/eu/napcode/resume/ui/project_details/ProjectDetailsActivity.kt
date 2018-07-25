@@ -41,14 +41,19 @@ class ProjectActivity : AppCompatActivity() {
                 getProjectTypeString(this, project.type)
         )
 
+        if (project.company != null) {
+            projectCompanyTextView.text = getString(R.string.commercial_project_at, project.company)
+            projectCompanyTextView.visibility = VISIBLE
+        }
+
         if (project.github != null) {
-            githubFAB.visibility = VISIBLE
             githubFAB.setOnClickListener{ startWebActivity(this, project.github)}
+            githubFAB.visibility = VISIBLE
         }
 
         if (project.playstore != null) {
-            playStoreFAB.visibility = VISIBLE
             playStoreFAB.setOnClickListener{ startAppPlayStoreActivity(this, project.playstore) }
+            playStoreFAB.visibility = VISIBLE
         }
     }
 }
