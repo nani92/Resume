@@ -29,6 +29,8 @@
     <string name="development_started">Started: %1s</string>
     <string name="description">Description</string>
     <string name="tech">Tech</string>
+    <string name="anim_proj_title" translatable="false">Project Title anim</string>
+    <string name="anim_proj_image" translatable="false">Project Image anim</string>
 
     <string name="cd_go_to_playstore">Go to PlayStore</string>
     <string name="cd_go_to_github">Go to GitHub</string>

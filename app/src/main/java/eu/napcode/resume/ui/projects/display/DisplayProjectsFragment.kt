@@ -1,5 +1,6 @@
 package eu.napcode.resume.ui.projects.display
 
+import android.app.ActivityOptions
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
@@ -17,9 +18,13 @@ import eu.napcode.resume.model.Project
 import eu.napcode.resume.model.ProjectType
 import eu.napcode.resume.ui.project_details.ProjectActivity
 import eu.napcode.resume.utils.getProjectTypeString
+import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlinx.android.synthetic.main.activity_project_details.view.*
 import kotlinx.android.synthetic.main.fragment_display_projects.*
 import kotlinx.android.synthetic.main.fragment_display_projects_empty.*
+import kotlinx.android.synthetic.main.item_project.view.*
 import javax.inject.Inject
+import android.util.Pair as AndroidPair
 
 class DisplayProjectsFragment : Fragment() {
 
@@ -86,10 +91,19 @@ class DisplayProjectsFragment : Fragment() {
     private fun displayProjects(projects: List<Project>) {
         emptyLayout.visibility = View.GONE
         projectsRecyclerView.adapter = DisplayProjectsAdapter(projects) {
-            var intent = Intent(context, ProjectActivity::class.java)
-            intent.putExtra(ProjectActivity.ARG_PROJECT, it)
-
-            startActivity(intent)
+            project: Project, view: View -> showProjectDetailsActivity(project, view)
         }
+    }
+
+    private fun showProjectDetailsActivity(project: Project, view: View) {
+        var intent = Intent(context, ProjectActivity::class.java)
+        intent.putExtra(ProjectActivity.ARG_PROJECT, project)
+
+        var titlePair = AndroidPair<View, String>(view.listProjectNameTextView, getString(R.string.anim_proj_title))
+        var imagePair = AndroidPair<View, String>(view.listProjectImageView, getString(R.string.anim_proj_image))
+        val transitionActivityOptions = ActivityOptions
+                .makeSceneTransitionAnimation(activity, titlePair, imagePair)
+
+        startActivity(intent, transitionActivityOptions.toBundle())
     }
 }
