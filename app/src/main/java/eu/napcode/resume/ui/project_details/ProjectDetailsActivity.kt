@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.support.design.chip.Chip
 import android.support.v7.app.AppCompatActivity
+import android.transition.Explode
 import android.view.View.VISIBLE
 import dagger.android.AndroidInjection
 import eu.napcode.resume.R
@@ -24,6 +25,8 @@ class ProjectActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_project_details)
         AndroidInjection.inject(this)
+
+        window.enterTransition = Explode()
 
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
