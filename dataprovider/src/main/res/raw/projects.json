@@ -75,6 +75,38 @@
     "type": "own",
     "playStore": "eu.napcode.counter",
     "links": []
+  },
+  {
+    "id": "5",
+    "name": "Go note it!",
+    "startYear": 2018,
+    "startMonth": 5,
+    "description": "App to take and share notes. \nAndroid App entirely developmed by myself. Project was started as capstone project in Android Developer Nanodegre. As it needed to meet requirements it was started in Java. Further development is made using Kotlin. \nApp consumes custom API created especially for this project by my husband. API is created using GraphQL.",
+    "tech": [
+      "Java",
+      "Kotlin",
+      "Apollo",
+      "RxJava",
+      "RxAndroid",
+      "Rx",
+      "Data Binding",
+      "GraphQL",
+      "Room",
+      "LiveData",
+      "Android SDK",
+      "Architecture Components",
+      "Dagger",
+      "GSON",
+      "MVVM",
+      "Mockito",
+      "Timber",
+      "EasyImage",
+      "Glide",
+      "PageList"
+    ],
+    "type": "own",
+    "links": [],
+    "github": "https://github.com/nani92/GoNoteIt"
   }
 ]
 
