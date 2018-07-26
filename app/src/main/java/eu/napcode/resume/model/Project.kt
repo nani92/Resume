@@ -37,7 +37,7 @@ data class Project(
         val playstore: String?,
 
         @Nullable
-        val links: Array<String>) : Parcelable {
+        val links: Array<String> = arrayOf<String>()) : Parcelable {
 
     constructor(parcel: Parcel) : this(
             parcel.readInt(),
