@@ -166,6 +166,19 @@
             app:layout_constraintRight_toLeftOf="@id/rightGuideline"
             app:layout_constraintTop_toBottomOf="@id/techLabelTextView"/>
 
+        <TextView
+            android:id="@+id/linksLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/base_margin"
+            android:text="@string/links"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintLeft_toRightOf="@id/leftGuideline"
+            app:layout_constraintTop_toBottomOf="@id/techChipGroup"
+            tools:visibility="visible"/>
+
         <android.support.constraint.Guideline
             android:id="@+id/leftGuideline"
             android:layout_width="wrap_content"

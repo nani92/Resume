@@ -77,5 +77,9 @@ class ProjectActivity : AppCompatActivity() {
 
             techChipGroup.addView(chip)
         }
+
+        if (project.links.size > 0) {
+            linksLabelTextView.visibility = VISIBLE
+        }
     }
 }

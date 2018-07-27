@@ -29,6 +29,7 @@
     <string name="development_started">Started: %1s</string>
     <string name="description">Description</string>
     <string name="tech">Tech</string>
+    <string name="links">Links</string>
     <string name="anim_proj_title" translatable="false">Project Title anim</string>
     <string name="anim_proj_image" translatable="false">Project Image anim</string>
 
