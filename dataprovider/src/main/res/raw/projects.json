@@ -107,6 +107,118 @@
     "type": "own",
     "links": [],
     "github": "https://github.com/nani92/GoNoteIt"
+  },
+  {
+    "id": "6",
+    "name": "Finderful",
+    "startYear": 2016,
+    "startMonth": 7,
+    "description": "Finderful is a simple iBeacon tracker.",
+    "tech": [
+      "Java",
+      "Butterknife",
+      "iBeacon",
+      "MVP",
+      "AltBeacon",
+      "Glide",
+      "MaterialShowcaseView"
+    ],
+    "type": "commercial",
+    "company": "Matsuu",
+    "links": [],
+    "playStore": "com.matsuu.finderful"
+  },
+  {
+    "id": "7",
+    "name": "BeachBuddy",
+    "startYear": 2016,
+    "startMonth": 8,
+    "description": "Simple iBeacon app that allows you to track beacons attached to your belonging.",
+    "tech": [
+      "Java",
+      "Butterknife",
+      "iBeacon",
+      "MVP",
+      "AltBeacon",
+      "Glide",
+      "MaterialShowcaseView"
+    ],
+    "type": "commercial",
+    "company": "Matsuu",
+    "links": [],
+    "playStore": "com.matsuu.beachbuddy"
+  },
+  {
+    "id": "8",
+    "name": "Garden Compass",
+    "startYear": 2016,
+    "startMonth": 3,
+    "description": "App that allows user to identify plants. It also helps with taking care about them.",
+    "tech": [
+      "Java",
+      "Butterknife",
+      "MVP",
+      "Glide",
+      "EasyImage",
+      "Parse",
+      "Facebook SDK"
+    ],
+    "type": "commercial",
+    "company": "Desmart",
+    "links": [],
+    "playStore": "com.desmart.gardencompass"
+  },
+  {
+    "id": "9",
+    "name": "TravelPath",
+    "startYear": 2015,
+    "startMonth": 11,
+    "description": "App that allows to create path for user and tracks it.",
+    "tech": [
+      "Java",
+      "Butterknife",
+      "MVP",
+      "Glide",
+      "iBeacon",
+      "NFC",
+      "Indoor Navigation"
+    ],
+    "type": "commercial",
+    "company": "Desmart",
+    "links": []
+  },
+  {
+    "id": "10",
+    "name": "Rumia Weather",
+    "startYear": 2017,
+    "startMonth": 6,
+    "description": "App displaying current weather in my home city.",
+    "tech": [
+      "Java",
+      "Butterknife",
+      "MVP",
+      "Glide",
+      "jSOUP"
+    ],
+    "type": "own",
+    "links": [],
+    "playStore": "eu.napcode.rumiaweather"
+  },
+  {
+    "id": "11",
+    "name": "AudioTrip",
+    "startYear": 2014,
+    "startMonth": 2,
+    "description": "AudioTrip audio travel guide will change your mobile into a personal city tour guide with a head full of stories.",
+    "tech": [
+      "iOS",
+      "objectiveC"
+    ],
+    "type": "commercial",
+    "company": "Insalgo",
+    "links": [
+      "http://www.audiotrip.org"
+    ]
   }
 ]
 
