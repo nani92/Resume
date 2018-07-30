@@ -1,12 +1,11 @@
 package eu.napcode.resume.ui.project_details
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.support.constraint.ConstraintSet
-import android.support.constraint.ConstraintSet.LEFT
-import android.support.constraint.ConstraintSet.RIGHT
-import android.support.constraint.ConstraintSet.TOP
-import android.support.constraint.ConstraintSet.BOTTOM
+import android.support.constraint.ConstraintSet.*
 import android.support.design.chip.Chip
 import android.support.v7.app.AppCompatActivity
 import android.transition.Explode
@@ -91,7 +90,6 @@ class ProjectActivity : AppCompatActivity() {
             for (link in project.links) {
                 var linkTextView = layoutInflater.inflate(R.layout.item_link, null, false) as TextView
                 linkTextView.text = link
-                linkTextView.id = R.id.linkTextView
 
                 projectDetailsConstraintLayout.addView(linkTextView)
                 var constraintSet = ConstraintSet()
@@ -99,6 +97,7 @@ class ProjectActivity : AppCompatActivity() {
                 constraintSet.connect(linkTextView.id, LEFT, R.id.leftGuideline, RIGHT)
                 constraintSet.connect(linkTextView.id, RIGHT, R.id.rightGuideline, LEFT)
                 constraintSet.connect(linkTextView.id, TOP, lastViewId, BOTTOM)
+                constraintSet.constrainWidth(linkTextView.id, MATCH_CONSTRAINT)
                 constraintSet.applyTo(projectDetailsConstraintLayout)
 
             }
