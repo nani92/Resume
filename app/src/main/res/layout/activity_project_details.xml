@@ -157,16 +157,20 @@
             android:text="@string/tech"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
+            android:visibility="gone"
             app:layout_constraintLeft_toRightOf="@id/leftGuideline"
-            app:layout_constraintTop_toBottomOf="@id/descriptionTextView"/>
+            app:layout_constraintTop_toBottomOf="@id/descriptionTextView"
+            tools:visibility="visible"/>
 
         <android.support.design.chip.ChipGroup
             android:id="@+id/techChipGroup"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:layout_constraintLeft_toRightOf="@id/leftGuideline"
             app:layout_constraintRight_toLeftOf="@id/rightGuideline"
-            app:layout_constraintTop_toBottomOf="@id/techLabelTextView"/>
+            app:layout_constraintTop_toBottomOf="@id/techLabelTextView"
+            tools:visibility="visible"/>
 
         <TextView
             android:id="@+id/linksLabelTextView"

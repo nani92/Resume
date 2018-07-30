@@ -84,6 +84,8 @@ class ProjectActivity : AppCompatActivity() {
     }
 
     private fun displayTech(techs: Array<String>) {
+        techLabelTextView.visibility = VISIBLE
+        techChipGroup.visibility = VISIBLE
 
         for (tech in techs) {
             var chip = Chip(this)

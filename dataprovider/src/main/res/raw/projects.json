@@ -46,19 +46,7 @@
     "startYear": 2016,
     "startMonth": 9,
     "description": "I started develop this app from scratch to release as an only Android Developer.",
-    "tech": [
-      "Java",
-      "Android SDK",
-      "ButterKnife",
-      "MVP",
-      "Retrofit",
-      "Android Priority Job Queue",
-      "Glide",
-      "Otto",
-      "EasyImage",
-      "Firebase Messaging",
-      "Facebook SDK"
-    ],
+    "tech": [],
     "type": "commercial",
     "company": "Matsuu",
     "links": []
@@ -114,15 +102,7 @@
     "startYear": 2016,
     "startMonth": 7,
     "description": "Finderful is a simple iBeacon tracker.",
-    "tech": [
-      "Java",
-      "Butterknife",
-      "iBeacon",
-      "MVP",
-      "AltBeacon",
-      "Glide",
-      "MaterialShowcaseView"
-    ],
+    "tech": [],
     "type": "commercial",
     "company": "Matsuu",
     "links": [],
@@ -134,15 +114,7 @@
     "startYear": 2016,
     "startMonth": 8,
     "description": "Simple iBeacon app that allows you to track beacons attached to your belonging.",
-    "tech": [
-      "Java",
-      "Butterknife",
-      "iBeacon",
-      "MVP",
-      "AltBeacon",
-      "Glide",
-      "MaterialShowcaseView"
-    ],
+    "tech": [],
     "type": "commercial",
     "company": "Matsuu",
     "links": [],
@@ -154,15 +126,7 @@
     "startYear": 2016,
     "startMonth": 3,
     "description": "App that allows user to identify plants. It also helps with taking care about them.",
-    "tech": [
-      "Java",
-      "Butterknife",
-      "MVP",
-      "Glide",
-      "EasyImage",
-      "Parse",
-      "Facebook SDK"
-    ],
+    "tech": [],
     "type": "commercial",
     "company": "Desmart",
     "links": [],
@@ -174,15 +138,7 @@
     "startYear": 2015,
     "startMonth": 11,
     "description": "App that allows to create path for user and tracks it.",
-    "tech": [
-      "Java",
-      "Butterknife",
-      "MVP",
-      "Glide",
-      "iBeacon",
-      "NFC",
-      "Indoor Navigation"
-    ],
+    "tech": [],
     "type": "commercial",
     "company": "Desmart",
     "links": []
@@ -210,14 +166,24 @@
     "startYear": 2014,
     "startMonth": 2,
     "description": "AudioTrip audio travel guide will change your mobile into a personal city tour guide with a head full of stories.",
-    "tech": [
-      "iOS",
-      "objectiveC"
-    ],
+    "tech": [],
     "type": "commercial",
     "company": "Insalgo",
     "links": [
       "http://www.audiotrip.org"
+    ]
+  },
+  {
+    "id": "12",
+    "name": "Books",
+    "startYear": 2017,
+    "startMonth": 11,
+    "description": "Create digital list of books you own. Write notes and own description. Share with your friends.\n\nApplication written with group of Android Developers from Google Udacity Scholarship.",
+    "tech": [],
+    "type": "open_source",
+    "github": "https://github.com/DroiDevs-PL/books",
+    "links": [
+      "https://medium.com/@njastrzebska5/google-udacity-developer-scholarship-challenge-5098cd970a14"
     ]
   }
 ]
