@@ -12,6 +12,7 @@ import eu.napcode.resume.ui.main.MainActivity
 import javax.inject.Inject
 import eu.napcode.resume.repository.EducationRepository
 import eu.napcode.resume.repository.ProjectRepository
+import eu.napcode.resume.repository.WorkRepository
 
 class SplashActivity : AppCompatActivity() {
 
@@ -24,6 +25,9 @@ class SplashActivity : AppCompatActivity() {
     @Inject
     lateinit var projectRepository: ProjectRepository
 
+    @Inject
+    lateinit var workRepository: WorkRepository
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AndroidInjection.inject(this)
@@ -31,6 +35,7 @@ class SplashActivity : AppCompatActivity() {
         loadProvidedDeveloperData()
         loadProvidedEducationData()
         loadProvidedProjectData()
+        loadProvidedWorkData()
 
         startActivity(Intent(this, MainActivity::class.java))
         finish()
@@ -57,4 +62,12 @@ class SplashActivity : AppCompatActivity() {
 
         projectRepository.saveProjects(projects as Array<Project>).subscribe()
     }
+
+    private fun loadProvidedWorkData() {
+        var works = LocalDataProvider(this)
+                .getWork(Array<Work>::class.java)
+
+        workRepository.saveWorks(works as Array<Work>).subscribe()
+    }
+
 }
