@@ -18,6 +18,7 @@ import eu.napcode.resume.utils.getProjectTypeString
 import eu.napcode.resume.utils.startAppPlayStoreActivity
 import eu.napcode.resume.utils.startWebActivity
 import kotlinx.android.synthetic.main.activity_project_details.*
+import kotlinx.android.synthetic.main.item_project.view.*
 
 class ProjectActivity : AppCompatActivity() {
 
@@ -81,6 +82,14 @@ class ProjectActivity : AppCompatActivity() {
         if (project.links.isNotEmpty()) {
             displayLinks(project.links)
         }
+
+        var imageIdName = getString(R.string.project_image_id_name, project.id)
+        var imageId = resources.getIdentifier(imageIdName, "drawable", packageName)
+
+        if ( imageId != 0) {
+            projectImageView.setImageDrawable(getDrawable(imageId))
+        }
+
     }
 
     private fun displayTech(techs: Array<String>) {

@@ -32,6 +32,8 @@
     <string name="links">Links</string>
     <string name="anim_proj_title" translatable="false">Project Title anim</string>
     <string name="anim_proj_image" translatable="false">Project Image anim</string>
+    <string name="project_image_id_name">proj_%1d</string>
+    <string name="project_image_id">R.drawable.%1s</string>
 
     <string name="cd_go_to_playstore">Go to PlayStore</string>
     <string name="cd_go_to_github">Go to GitHub</string>

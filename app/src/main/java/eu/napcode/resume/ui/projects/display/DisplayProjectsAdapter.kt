@@ -11,6 +11,7 @@ import eu.napcode.resume.model.Project
 import eu.napcode.resume.model.ProjectType.COMMERCIAL
 import eu.napcode.resume.utils.getDateSpannableString
 import kotlinx.android.synthetic.main.activity_project_details.view.*
+import kotlinx.android.synthetic.main.item_education.view.*
 import kotlinx.android.synthetic.main.item_project.view.*
 
 class DisplayProjectsAdapter(private val projects: List<Project>?, val listener: (Project, View) -> Unit) : RecyclerView.Adapter<DisplayProjectsAdapter.ViewHolder>() {
@@ -32,6 +33,15 @@ class DisplayProjectsAdapter(private val projects: List<Project>?, val listener:
             itemView.listProjectDateTextView.text = getDateSpannableString(project.startMonth, project.startYear)
 
             manageCompanyDisplaying(context, project)
+
+            var imageIdName = context.getString(R.string.project_image_id_name, project.id)
+            var imageId = context.resources.getIdentifier(imageIdName, "drawable", context.packageName)
+
+            if ( imageId != 0) {
+                itemView.listProjectImageView.setImageDrawable(context.getDrawable(imageId))
+            } else{
+                itemView.listProjectImageView.setImageDrawable(context.getDrawable(R.drawable.ic_project_placeholder))
+            }
 
             setOnClickListener { listener(project, itemView) }
         }
