@@ -1,7 +1,5 @@
 package eu.napcode.resume.ui.project_details
 
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.support.constraint.ConstraintSet
@@ -75,7 +73,19 @@ class ProjectActivity : AppCompatActivity() {
 
         descriptionTextView.text = project.description
 
-        for (tech in project.tech) {
+        if (project.tech.isNotEmpty()) {
+            displayTech(project.tech)
+        }
+
+
+        if (project.links.isNotEmpty()) {
+            displayLinks(project.links)
+        }
+    }
+
+    private fun displayTech(techs: Array<String>) {
+
+        for (tech in techs) {
             var chip = Chip(this)
             chip.text = tech
             var padding = resources.getDimension(R.dimen.base_margin).toInt()
@@ -83,27 +93,33 @@ class ProjectActivity : AppCompatActivity() {
 
             techChipGroup.addView(chip)
         }
+    }
 
-        if (project.links.isNotEmpty()) {
-            linksLabelTextView.visibility = VISIBLE
-            var lastViewId = R.id.linksLabelTextView
+    private fun displayLinks(links: Array<String>) {
+        linksLabelTextView.visibility = VISIBLE
+        var lastViewId = R.id.linksLabelTextView
 
-            for (link in project.links) {
-                var linkTextView = layoutInflater.inflate(R.layout.item_link, null, false) as TextView
-                linkTextView.text = link
-                linkTextView.id = View.generateViewId()
+        for (link in links) {
+            var linkTextView = layoutInflater.inflate(R.layout.item_link, null, false) as TextView
+            linkTextView.text = link
+            linkTextView.id = View.generateViewId()
+            projectDetailsConstraintLayout.addView(linkTextView)
 
-                projectDetailsConstraintLayout.addView(linkTextView)
-                var constraintSet = ConstraintSet()
-                constraintSet.clone(projectDetailsConstraintLayout)
-                constraintSet.connect(linkTextView.id, LEFT, R.id.leftGuideline, RIGHT)
-                constraintSet.connect(linkTextView.id, RIGHT, R.id.rightGuideline, LEFT)
-                constraintSet.connect(linkTextView.id, TOP, lastViewId, BOTTOM)
-                constraintSet.constrainWidth(linkTextView.id, MATCH_CONSTRAINT)
-                constraintSet.applyTo(projectDetailsConstraintLayout)
+            getConstrainSetForLink(linkTextView, lastViewId)
+                    .applyTo(projectDetailsConstraintLayout)
 
-                lastViewId = linkTextView.id
-            }
+            lastViewId = linkTextView.id
         }
+    }
+
+    private fun getConstrainSetForLink(linkTextView: TextView, lastViewId: Int): ConstraintSet {
+        var constraintSet = ConstraintSet()
+        constraintSet.clone(projectDetailsConstraintLayout)
+        constraintSet.connect(linkTextView.id, LEFT, R.id.leftGuideline, RIGHT)
+        constraintSet.connect(linkTextView.id, RIGHT, R.id.rightGuideline, LEFT)
+        constraintSet.connect(linkTextView.id, TOP, lastViewId, BOTTOM)
+        constraintSet.constrainWidth(linkTextView.id, MATCH_CONSTRAINT)
+
+        return constraintSet
     }
 }
