@@ -106,6 +106,7 @@ class ProjectActivity : AppCompatActivity() {
             linkTextView.text = link
             linkTextView.id = View.generateViewId()
             projectDetailsConstraintLayout.addView(linkTextView)
+            linkTextView.setOnClickListener { startWebActivity(this, link) }
 
             getConstrainSetForLink(linkTextView, lastViewId)
                     .applyTo(projectDetailsConstraintLayout)
