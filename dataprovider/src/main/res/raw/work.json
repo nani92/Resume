@@ -1,0 +1,119 @@
+[
+  {
+    "id": 0,
+    "startYear": 2016,
+    "startMonth": 6,
+    "name": "Matsuu",
+    "role": "Android Developer",
+    "tech": [
+      "Java",
+      "Android SDK",
+      "ButterKnife",
+      "MVP",
+      "Retrofit",
+      "Android Priority Job Queue",
+      "Glide",
+      "Otto",
+      "EasyImage",
+      "Firebase Messaging",
+      "Facebook SDK",
+      "Java",
+      "Butterknife",
+      "iBeacon",
+      "MVP",
+      "AltBeacon",
+      "Glide",
+      "MaterialShowcaseView",
+      "Java",
+      "Android SDK",
+      "Butterknife",
+      "iBeacon",
+      "MVP",
+      "AltBeacon",
+      "Glide",
+      "MaterialShowcaseView",
+      "Android SDK"
+    ]
+  },
+  {
+    "id": 1,
+    "startYear": 2015,
+    "startMonth": 10,
+    "endYear": 2016,
+    "endMonth": 5,
+    "name": "DeSmart",
+    "role": "Android Developer",
+    "tech": [
+      "Java",
+      "Butterknife",
+      "MVP",
+      "Glide",
+      "EasyImage",
+      "Parse",
+      "Facebook SDK",
+      "Java",
+      "Butterknife",
+      "MVP",
+      "Glide",
+      "iBeacon",
+      "NFC",
+      "Indoor Navigation",
+      "EddyStone",
+      "Android SDK",
+      "Android SDK",
+      "Android SDK"
+    ]
+  },
+  {
+    "id": 2,
+    "startYear": 2015,
+    "startMonth": 5,
+    "endYear": 2015,
+    "endMonth": 9,
+    "name": "Tux4Kids",
+    "role": "Google Summer of Code student, Mobile Application Developer",
+    "tech": [
+      "Phonegap",
+      "Cordova",
+      "JavaScript",
+      "Android",
+      "HTML5",
+      "CSS3",
+      "AngularJS"
+    ]
+  },
+  {
+    "id": 3,
+    "startYear": 2014,
+    "startMonth": 8,
+    "endYear": 2015,
+    "endMonth": 11,
+    "name": "Studio Spanie",
+    "role": "Android Developer",
+    "tech": [
+      "Android SDK",
+      "Java"
+    ]
+  },
+  {
+    "id": 4,
+    "startYear": 2013,
+    "startMonth": 10,
+    "endYear": 2014,
+    "endMonth": 6,
+    "name": "Insalgo",
+    "role": "Mobile Developer",
+    "tech": [
+      "Unity",
+      "C#",
+      "JNI",
+      "Java",
+      "Android",
+      "Android SDK",
+      "iOS",
+      "Objective-C",
+      "Cg"
+    ]
+  }
+]
+
