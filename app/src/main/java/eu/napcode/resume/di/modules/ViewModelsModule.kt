@@ -8,6 +8,7 @@ import dagger.multibindings.IntoMap
 import eu.napcode.resume.ui.developer.DeveloperViewModel
 import eu.napcode.resume.ui.education.EducationViewModel
 import eu.napcode.resume.ui.projects.display.DisplayProjectsViewModel
+import eu.napcode.resume.ui.work.WorkViewModel
 
 @Module
 interface ViewModelsModule {
@@ -26,6 +27,11 @@ interface ViewModelsModule {
     @IntoMap
     @ViewModelKey(DisplayProjectsViewModel::class)
     abstract fun bindProjectViewModel(projectViewModel: DisplayProjectsViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(WorkViewModel::class)
+    abstract fun bindWorkViewModel(workViewModel: WorkViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ResumeViewModelFactory): ViewModelProvider.Factory
