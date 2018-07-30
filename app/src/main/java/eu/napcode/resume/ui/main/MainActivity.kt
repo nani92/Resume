@@ -19,6 +19,7 @@ import eu.napcode.resume.model.Developer
 import eu.napcode.resume.ui.developer.DeveloperFragment
 import eu.napcode.resume.ui.developer.DeveloperViewModel
 import eu.napcode.resume.ui.education.EducationFragment
+import eu.napcode.resume.ui.projects.ProjectsFragment
 import eu.napcode.resume.utils.startSendMailActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.drawer_header.view.*
@@ -111,6 +112,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (menuItem.itemId) {
 
             R.id.projects -> {
+                fragmentToSet = ProjectsFragment()
+
                 return true
             }
 

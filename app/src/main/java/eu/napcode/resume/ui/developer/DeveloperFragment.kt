@@ -17,7 +17,7 @@ import eu.napcode.resume.R
 import kotlinx.android.synthetic.main.fragment_developer.*
 import javax.inject.Inject
 import eu.napcode.resume.model.Developer
-import eu.napcode.resume.utils.startPlayStoreActivity
+import eu.napcode.resume.utils.startDevPlayStoreActivity
 import eu.napcode.resume.utils.startSendMailActivity
 import eu.napcode.resume.utils.startWebActivity
 import kotlinx.android.synthetic.main.dev_contact.*
@@ -57,7 +57,7 @@ class DeveloperFragment : Fragment() {
         devSummaryTextView.text = getSummarySpanned(developer.summary)
         devHighlightsTextView.text = getHighlightsSpanned(developer.highlights)
         mailFAB.setOnClickListener { startSendMailActivity(context!!, developer.mail) }
-        playstoreImageView.setOnClickListener { startPlayStoreActivity(context!!, developer.playStore) }
+        playstoreImageView.setOnClickListener { startDevPlayStoreActivity(context!!, developer.playStore) }
         githubImageView.setOnClickListener { startWebActivity(context!!, "https://github.com/${developer.github}") }
         homeImageView.setOnClickListener { startWebActivity(context!!, developer.home) }
         gitlabImageView.setOnClickListener { startWebActivity(context!!, "https://gitlab.com/${developer.gitlab}") }

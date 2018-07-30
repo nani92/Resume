@@ -12,7 +12,16 @@ fun startSendMailActivity(context: Context, mail: String) {
     context.startActivity(Intent(ACTION_SENDTO, uri))
 }
 
-fun startPlayStoreActivity(context: Context, playStore: String) {
+fun startAppPlayStoreActivity(context: Context, playStore: String) {
+
+    try {
+        context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$playStore")))
+    } catch (anfe: android.content.ActivityNotFoundException) {
+        context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$playStore")))
+    }
+}
+
+fun startDevPlayStoreActivity(context: Context, playStore: String) {
 
     try {
         context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://dev?id=$playStore")))

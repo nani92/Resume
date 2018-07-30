@@ -9,6 +9,7 @@ import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import eu.napcode.resume.R
 import eu.napcode.resume.model.Education
+import eu.napcode.resume.utils.getDateSpannableString
 import eu.napcode.resume.utils.spanWith
 import java.text.SimpleDateFormat
 import java.time.Month
@@ -48,7 +49,7 @@ class EducationStyler(var context: Context, val education: Education) {
                 }
     }
 
-    fun getDatesSpannable(): SpannableString? {
+    fun getEducationDatesSpannable(): SpannableString? {
         var startSpannableString = getDateSpannableString(education.startMonth, education.startYear)
         var endSpannableString = getDateSpannableString(education.endMonth, education.endYear)
 
@@ -58,38 +59,6 @@ class EducationStyler(var context: Context, val education: Education) {
             endSpannableString == null -> startSpannableString
 
             else -> SpannableString("$startSpannableString - $endSpannableString")
-        }
-    }
-
-    private fun getDateSpannableString(month: Int?, year: Int?): SpannableString? {
-        var monthSpannableString: SpannableString? = null
-
-        if (month != null) {
-            var monthString = getMonthName(month)
-            monthSpannableString = SpannableString(monthString)
-                    .spanWith(monthString) {
-                        what = StyleSpan(Typeface.ITALIC)
-                    }
-        }
-
-        return when {
-            year == null -> return null
-
-            monthSpannableString == null -> SpannableString(year.toString())
-
-            else -> SpannableString("$monthSpannableString $year")
-        }
-    }
-
-    private fun getMonthName(month: Int) : String {
-
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            Month.of(month).getDisplayName(TextStyle.FULL_STANDALONE, Locale.getDefault())
-        } else{
-            val date = Date()
-            date.month = month - 1
-            val dateFormat = SimpleDateFormat("LLLL", Locale.getDefault())
-            dateFormat.format(date)
         }
     }
 }

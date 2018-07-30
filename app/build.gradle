@@ -47,6 +47,7 @@ dependencies {
     //room
     implementation "android.arch.persistence.room:runtime:$archVersion"
     kapt "android.arch.persistence.room:compiler:$archVersion"
+    annotationProcessor "android.arch.persistence.room:compiler:$archVersion"
 
     //livedata
     implementation "android.arch.lifecycle:extensions:$archVersion"

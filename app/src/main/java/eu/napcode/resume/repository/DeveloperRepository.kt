@@ -7,7 +7,6 @@ import eu.napcode.resume.entity.DeveloperEntity
 import eu.napcode.resume.model.Developer
 import eu.napcode.resume.rx.RxSchedulers
 import io.reactivex.Completable
-import io.reactivex.Scheduler
 import javax.inject.Inject
 
 class DeveloperRepository

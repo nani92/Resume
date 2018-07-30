@@ -8,3 +8,4 @@
 /build
 /captures
 .externalNativeBuild
+/dataprovider/src/main/res/drawable

@@ -1,0 +1,190 @@
+[
+  {
+    "id": 0,
+    "name": "Resume App",
+    "github": "https://github.com/nani92/Resume",
+    "startYear": 2018,
+    "startMonth": 7,
+    "description": "Right now you are using Resume App. \nThis app presents my Resume in Android Application form. App is entirely designed and written by me. I used Kotlin and Android Architecture Components to develop this application. You can grab a source code from my github.",
+    "tech": [
+      "Kotlin",
+      "Android SDK",
+      "Room",
+      "LiveData",
+      "GSON",
+      "Dagger",
+      "RxKotlin",
+      "RxAndroid",
+      "CircleImageView",
+      "Architecture Components",
+      "MVVM"
+    ],
+    "type": "own",
+    "links": []
+  },
+  {
+    "id": 1,
+    "name": "Baby Pacifier",
+    "playStore": "eu.napcode.kidscalmer",
+    "startYear": 2017,
+    "startMonth": 11,
+    "description": "App was entirely designed and developed by me. It was created when my son was 3months old and had a very bad time. This app helped him to calm down. I consider BabyPacifier as my most important and favorite app as this was very crucial to my other projects. It works for bad days of my son even now, when he is 1 year old.",
+    "links": [
+      "https://medium.com/@njastrzebska5/google-udacity-developer-scholarship-challenge-5098cd970a14"
+    ],
+    "tech": [
+      "Kotlin",
+      "Android SDK",
+      "ExoPlayer"
+    ],
+    "type": "own"
+  },
+  {
+    "id": 3,
+    "name": "Dobre Programy",
+    "playStore": "com.matsuu.dobreprogramy.aplikacjakonkursowa",
+    "startYear": 2016,
+    "startMonth": 9,
+    "description": "I started develop this app from scratch to release as an only Android Developer.",
+    "tech": [],
+    "type": "commercial",
+    "company": "Matsuu",
+    "links": []
+  },
+  {
+    "id": 4,
+    "name": "Just count it!",
+    "startYear": 2018,
+    "startMonth": 5,
+    "description": "Simple counter app made in ReactNative.",
+    "tech": [
+      "React Native"
+    ],
+    "type": "own",
+    "playStore": "eu.napcode.counter",
+    "links": []
+  },
+  {
+    "id": "5",
+    "name": "Go note it!",
+    "startYear": 2018,
+    "startMonth": 5,
+    "description": "App to take and share notes. \nAndroid App entirely developmed by myself. Project was started as capstone project in Android Developer Nanodegre. As it needed to meet requirements it was started in Java. Further development is made using Kotlin. \nApp consumes custom API created especially for this project by my husband. API is created using GraphQL.",
+    "tech": [
+      "Java",
+      "Kotlin",
+      "Apollo",
+      "RxJava",
+      "RxAndroid",
+      "Rx",
+      "Data Binding",
+      "GraphQL",
+      "Room",
+      "LiveData",
+      "Android SDK",
+      "Architecture Components",
+      "Dagger",
+      "GSON",
+      "MVVM",
+      "Mockito",
+      "Timber",
+      "EasyImage",
+      "Glide",
+      "PageList"
+    ],
+    "type": "own",
+    "links": [],
+    "github": "https://github.com/nani92/GoNoteIt"
+  },
+  {
+    "id": "6",
+    "name": "Finderful",
+    "startYear": 2016,
+    "startMonth": 7,
+    "description": "Finderful is a simple iBeacon tracker.",
+    "tech": [],
+    "type": "commercial",
+    "company": "Matsuu",
+    "links": [],
+    "playStore": "com.matsuu.finderful"
+  },
+  {
+    "id": "7",
+    "name": "BeachBuddy",
+    "startYear": 2016,
+    "startMonth": 8,
+    "description": "Simple iBeacon app that allows you to track beacons attached to your belonging.",
+    "tech": [],
+    "type": "commercial",
+    "company": "Matsuu",
+    "links": [],
+    "playStore": "com.matsuu.beachbuddy"
+  },
+  {
+    "id": "8",
+    "name": "Garden Compass",
+    "startYear": 2016,
+    "startMonth": 3,
+    "description": "App that allows user to identify plants. It also helps with taking care about them.",
+    "tech": [],
+    "type": "commercial",
+    "company": "Desmart",
+    "links": [],
+    "playStore": "com.desmart.gardencompass"
+  },
+  {
+    "id": "9",
+    "name": "TravelPath",
+    "startYear": 2015,
+    "startMonth": 11,
+    "description": "App that allows to create path for user and tracks it.",
+    "tech": [],
+    "type": "commercial",
+    "company": "Desmart",
+    "links": []
+  },
+  {
+    "id": "10",
+    "name": "Rumia Weather",
+    "startYear": 2017,
+    "startMonth": 6,
+    "description": "App displaying current weather in my home city.",
+    "tech": [
+      "Java",
+      "Butterknife",
+      "MVP",
+      "Glide",
+      "jSOUP"
+    ],
+    "type": "own",
+    "links": [],
+    "playStore": "eu.napcode.rumiaweather"
+  },
+  {
+    "id": "11",
+    "name": "AudioTrip",
+    "startYear": 2014,
+    "startMonth": 2,
+    "description": "AudioTrip audio travel guide will change your mobile into a personal city tour guide with a head full of stories.",
+    "tech": [],
+    "type": "commercial",
+    "company": "Insalgo",
+    "links": [
+      "http://www.audiotrip.org"
+    ]
+  },
+  {
+    "id": "12",
+    "name": "Books",
+    "startYear": 2017,
+    "startMonth": 11,
+    "description": "Create digital list of books you own. Write notes and own description. Share with your friends.\n\nApplication written with group of Android Developers from Google Udacity Scholarship.",
+    "tech": [],
+    "type": "open_source",
+    "github": "https://github.com/DroiDevs-PL/books",
+    "links": [
+      "https://medium.com/@njastrzebska5/google-udacity-developer-scholarship-challenge-5098cd970a14"
+    ]
+  }
+]
+
