@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView
-    android:id="@+id/linkTextView"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linkTextView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:drawableLeft="@drawable/ic_web"
     android:drawablePadding="@dimen/small_margin"
     android:drawableTint="@color/colorPrimary"
+    android:ellipsize="end"
+    android:maxLines="1"
     android:paddingBottom="@dimen/small_margin"
     android:paddingTop="@dimen/small_margin"
     android:textSize="@dimen/primaryTextSize"

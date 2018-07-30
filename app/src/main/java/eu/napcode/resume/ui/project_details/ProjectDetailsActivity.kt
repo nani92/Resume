@@ -9,6 +9,7 @@ import android.support.constraint.ConstraintSet.*
 import android.support.design.chip.Chip
 import android.support.v7.app.AppCompatActivity
 import android.transition.Explode
+import android.view.View
 import android.view.View.VISIBLE
 import android.widget.TextView
 import dagger.android.AndroidInjection
@@ -90,6 +91,7 @@ class ProjectActivity : AppCompatActivity() {
             for (link in project.links) {
                 var linkTextView = layoutInflater.inflate(R.layout.item_link, null, false) as TextView
                 linkTextView.text = link
+                linkTextView.id = View.generateViewId()
 
                 projectDetailsConstraintLayout.addView(linkTextView)
                 var constraintSet = ConstraintSet()
@@ -100,6 +102,7 @@ class ProjectActivity : AppCompatActivity() {
                 constraintSet.constrainWidth(linkTextView.id, MATCH_CONSTRAINT)
                 constraintSet.applyTo(projectDetailsConstraintLayout)
 
+                lastViewId = linkTextView.id
             }
         }
     }
