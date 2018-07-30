@@ -13,6 +13,6 @@ abstract class WorkDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract fun insert(vararg work: WorkEntity)
 
-    @Query("SELECT * FROM workentity ORDER BY endYear DESC")
+    @Query("SELECT * FROM workentity ORDER BY startYear DESC, startMonth DESC")
     abstract fun load(): LiveData<List<WorkEntity>>
 }
