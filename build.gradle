@@ -7,6 +7,7 @@ buildscript {
     ext.archVersion = '1.1.1'
     ext.daggerVersion = '2.16'
     ext.gsonVersion = '2.8.4'
+    ext.glideVersion = '4.7.1'
 
     repositories {
         google()

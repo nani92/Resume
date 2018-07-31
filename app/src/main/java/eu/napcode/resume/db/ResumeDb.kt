@@ -6,9 +6,11 @@ import android.arch.persistence.room.TypeConverters
 import eu.napcode.resume.dao.DeveloperDao
 import eu.napcode.resume.dao.EducationDao
 import eu.napcode.resume.dao.ProjectDao
+import eu.napcode.resume.dao.WorkDao
 import eu.napcode.resume.entity.DeveloperEntity
 import eu.napcode.resume.entity.EducationEntity
 import eu.napcode.resume.entity.ProjectEntity
+import eu.napcode.resume.entity.WorkEntity
 import eu.napcode.resume.utils.ProjectTypeConverters
 import eu.napcode.resume.utils.TechConverters
 
@@ -16,7 +18,8 @@ import eu.napcode.resume.utils.TechConverters
         entities = [
             DeveloperEntity::class,
             EducationEntity::class,
-            ProjectEntity::class
+            ProjectEntity::class,
+            WorkEntity::class
         ],
         version = 1,
         exportSchema = false)
@@ -30,4 +33,6 @@ abstract class ResumeDb : RoomDatabase() {
     abstract fun educationDao(): EducationDao
 
     abstract fun projectDao(): ProjectDao
+
+    abstract fun workDao(): WorkDao
 }

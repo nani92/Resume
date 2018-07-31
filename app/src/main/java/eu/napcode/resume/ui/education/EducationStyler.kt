@@ -10,6 +10,7 @@ import android.text.style.StyleSpan
 import eu.napcode.resume.R
 import eu.napcode.resume.model.Education
 import eu.napcode.resume.utils.getDateSpannableString
+import eu.napcode.resume.utils.getFullDatesSpannable
 import eu.napcode.resume.utils.spanWith
 import java.text.SimpleDateFormat
 import java.time.Month
@@ -50,15 +51,6 @@ class EducationStyler(var context: Context, val education: Education) {
     }
 
     fun getEducationDatesSpannable(): SpannableString? {
-        var startSpannableString = getDateSpannableString(education.startMonth, education.startYear)
-        var endSpannableString = getDateSpannableString(education.endMonth, education.endYear)
-
-        return when {
-            startSpannableString == null -> endSpannableString
-
-            endSpannableString == null -> startSpannableString
-
-            else -> SpannableString("$startSpannableString - $endSpannableString")
-        }
+        return getFullDatesSpannable(education.startMonth, education.startYear, education.endMonth, education.endYear)
     }
 }

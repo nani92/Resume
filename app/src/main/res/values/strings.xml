@@ -35,6 +35,8 @@
     <string name="project_image_id_name">proj_%1d</string>
     <string name="project_image_id">R.drawable.%1s</string>
 
+    <string name="work_at">at %1s</string>
+
     <string name="cd_go_to_playstore">Go to PlayStore</string>
     <string name="cd_go_to_github">Go to GitHub</string>
 </resources>

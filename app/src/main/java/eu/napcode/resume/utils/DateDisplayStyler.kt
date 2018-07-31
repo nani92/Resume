@@ -41,3 +41,16 @@ private fun getMonthName(month: Int): String {
         dateFormat.format(date)
     }
 }
+
+fun getFullDatesSpannable(startMonth: Int?, startYear: Int?, endMonth: Int?, endYear: Int?): SpannableString? {
+    var startSpannableString = getDateSpannableString(startMonth, startYear)
+    var endSpannableString = getDateSpannableString(endMonth, endYear)
+
+    return when {
+        startSpannableString == null -> endSpannableString
+
+        endSpannableString == null -> startSpannableString
+
+        else -> SpannableString("$startSpannableString - $endSpannableString")
+    }
+}

@@ -58,7 +58,8 @@
     "startMonth": 5,
     "description": "Simple counter app made in ReactNative.",
     "tech": [
-      "React Native"
+      "React Native",
+      "JavaScript"
     ],
     "type": "own",
     "playStore": "eu.napcode.counter",
@@ -90,7 +91,8 @@
       "Timber",
       "EasyImage",
       "Glide",
-      "PageList"
+      "PageList",
+      "Android SDK"
     ],
     "type": "own",
     "links": [],
@@ -179,12 +181,40 @@
     "startYear": 2017,
     "startMonth": 11,
     "description": "Create digital list of books you own. Write notes and own description. Share with your friends.\n\nApplication written with group of Android Developers from Google Udacity Scholarship.",
-    "tech": [],
+    "tech": [
+      "Java",
+      "Android SDK",
+      "Architecture Components",
+      "MVVM",
+      "Room",
+      "LiveData",
+      "Glide"
+    ],
     "type": "open_source",
     "github": "https://github.com/DroiDevs-PL/books",
     "links": [
       "https://medium.com/@njastrzebska5/google-udacity-developer-scholarship-challenge-5098cd970a14"
     ]
+  },
+  {
+    "id": "13",
+    "name": "Tux4Words",
+    "startYear": 2015,
+    "startMonth": 5,
+    "description": "Tux4Words is a mobile application developed for organisation Tux4Words during Google Summer of Code 2015. The purpose of this application is to teach the youngest children reading and writing.\n\nApp was entirely designed end developed by me.",
+    "tech": [
+      "HTML5",
+      "JavaScript",
+      "CSS3",
+      "AngularJS",
+      "Cordova",
+      "Phonegap",
+      "LESS",
+      "Gulp"
+    ],
+    "type": "open_source",
+    "github": "https://github.com/nani92/Tux4Words",
+    "links": []
   }
 ]
 
