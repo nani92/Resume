@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import eu.napcode.resume.R
 import eu.napcode.resume.model.Work
+import eu.napcode.resume.utils.getFullDatesSpannable
 import kotlinx.android.synthetic.main.item_work.view.*
 
 class WorkAdapter(private val works: List<Work>?, public val context: Context) : RecyclerView.Adapter<WorkAdapter.ViewHolder>() {
@@ -35,6 +36,7 @@ class WorkAdapter(private val works: List<Work>?, public val context: Context) :
 
             itemView.listWorkRoleTextView.text = work.role
             itemView.listWorkCompanyTextView.text = context.getString(R.string.work_at, work.name)
+            itemView.listWorkDateTextView.text = getFullDatesSpannable(work.startMonth, work.startYear, work.endMonth, work.endYear)
         }
     }
 
