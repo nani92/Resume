@@ -5,6 +5,8 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import eu.napcode.resume.R
 import eu.napcode.resume.model.Work
 import kotlinx.android.synthetic.main.item_work.view.*
@@ -24,6 +26,13 @@ class WorkAdapter(private val works: List<Work>?, public val context: Context) :
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(work: Work) = with(itemView) {
+            Glide.with(context)
+                    .load(work.logo)
+                    .apply(RequestOptions()
+                            .placeholder(R.drawable.ic_work_placeholder)
+                            .dontAnimate())
+                    .into(itemView.listWorkImageView)
+
             itemView.listWorkRoleTextView.text = work.role
             itemView.listWorkCompanyTextView.text = context.getString(R.string.work_at, work.name)
         }

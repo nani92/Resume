@@ -33,7 +33,8 @@
       "Glide",
       "MaterialShowcaseView",
       "Android SDK"
-    ]
+    ],
+    "logo":"https://s3-media2.fl.yelpcdn.com/bphoto/O4my5EiRZksRRkGdNvVi4w/o.jpg"
   },
   {
     "id": 1,
@@ -62,7 +63,8 @@
       "Android SDK",
       "Android SDK",
       "Android SDK"
-    ]
+    ],
+    "logo": "https://static2.s-trojmiasto.pl/zdj/c/n/56/1787/330x0/1787141-Desmart-sp-z-o-o.jpg"
   },
   {
     "id": 2,
@@ -80,7 +82,8 @@
       "HTML5",
       "CSS3",
       "AngularJS"
-    ]
+    ],
+    "logo": "https://avatars1.githubusercontent.com/u/1569528?s=200&v=4"
   },
   {
     "id": 3,
@@ -113,7 +116,8 @@
       "iOS",
       "Objective-C",
       "Cg"
-    ]
+    ],
+    "logo": "http://www.insalgo.com/wp-content/uploads/2017/09/layer1-9-copy.png"
   }
 ]
 

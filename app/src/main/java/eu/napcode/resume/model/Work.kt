@@ -25,7 +25,10 @@ data class Work(
         @Nullable
         val role: String?,
 
-        val tech: Array<String>) {
+        val tech: Array<String>,
+
+        @Nullable
+        val logo: String?) {
 
     constructor(entity: WorkEntity) :
             this(
@@ -36,6 +39,7 @@ data class Work(
                     endMonth = entity.endMonth,
                     name = entity.name,
                     role = entity.role,
-                    tech = entity.tech
+                    tech = entity.tech,
+                    logo = entity.logo
             )
 }
