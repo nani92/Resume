@@ -24,7 +24,8 @@ class WorkAdapter(private val works: List<Work>?, public val context: Context) :
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(work: Work) = with(itemView) {
-            itemView.listWorkTextView.text = work.name
+            itemView.listWorkRoleTextView.text = work.role
+            itemView.listWorkCompanyTextView.text = context.getString(R.string.work_at, work.name)
         }
     }
 
