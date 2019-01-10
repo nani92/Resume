@@ -46,7 +46,7 @@
     "startYear": 2016,
     "startMonth": 9,
     "description": "I started develop this app from scratch to release as an only Android Developer.",
-    "tech": [],
+    "tech": ["Android"],
     "type": "commercial",
     "company": "Matsuu",
     "links": []
@@ -100,15 +100,14 @@
   },
   {
     "id": "6",
-    "name": "Finderful",
+    "name": "Finderful for Android",
     "startYear": 2016,
     "startMonth": 7,
     "description": "Finderful is a simple iBeacon tracker.",
-    "tech": [],
+    "tech": ["Android"],
     "type": "commercial",
     "company": "Matsuu",
-    "links": [],
-    "playStore": "com.matsuu.finderful"
+    "links": ["https://matsuu.com/portfolio/finderful/"]
   },
   {
     "id": "7",
@@ -116,11 +115,10 @@
     "startYear": 2016,
     "startMonth": 8,
     "description": "Simple iBeacon app that allows you to track beacons attached to your belonging.",
-    "tech": [],
+    "tech": ["Android"],
     "type": "commercial",
     "company": "Matsuu",
-    "links": [],
-    "playStore": "com.matsuu.beachbuddy"
+    "links": []
   },
   {
     "id": "8",
@@ -128,7 +126,7 @@
     "startYear": 2016,
     "startMonth": 3,
     "description": "App that allows user to identify plants. It also helps with taking care about them.",
-    "tech": [],
+    "tech": ["Android"],
     "type": "commercial",
     "company": "Desmart",
     "links": [],
@@ -140,7 +138,7 @@
     "startYear": 2015,
     "startMonth": 11,
     "description": "App that allows to create path for user and tracks it.",
-    "tech": [],
+    "tech": ["Android"],
     "type": "commercial",
     "company": "Desmart",
     "links": []
@@ -168,7 +166,7 @@
     "startYear": 2014,
     "startMonth": 2,
     "description": "AudioTrip audio travel guide will change your mobile into a personal city tour guide with a head full of stories.",
-    "tech": [],
+    "tech": ["iOS"],
     "type": "commercial",
     "company": "Insalgo",
     "links": [
@@ -215,6 +213,34 @@
     "type": "open_source",
     "github": "https://github.com/nani92/Tux4Words",
     "links": []
+  },
+  {
+    "id": "14",
+    "name": "Medfriend",
+    "startYear": 2018,
+    "startMonth": 9,
+    "description": "Application that allows user to store info about medications and reminds to take them.",
+    "tech": ["ReactNative"],
+    "type": "commercial",
+    "company": "Matsuu",
+    "links": []
+  },
+  {
+    "id": 15,
+    "name": "Christmas Puzzles",
+    "playStore": "eu.napcode.christmaspuzzles",
+    "startYear": 2018,
+    "startMonth": 11,
+    "description": "App with puzzles for kids of age between 3 and 5 featuring Christmas.",
+    "links": [],
+    "tech": [
+      "Kotlin",
+      "Android SDK",
+      "Glide",
+      "Rx",
+      "Sentry"
+    ],
+    "type": "own"
   }
 ]
 
