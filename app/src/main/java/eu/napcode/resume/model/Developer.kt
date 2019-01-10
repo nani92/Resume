@@ -24,9 +24,12 @@ data class Developer(
 
         val playStore: String,
 
-        val highlights: String) {
+        val highlights: String,
+
+        val skills: String) {
 
     constructor(entity: DeveloperEntity) :
             this(entity.id, entity.name, entity.surname, entity.role, entity.summary,
-                    entity.mail, entity.home, entity.github, entity.gitlab, entity.playStore, entity.highlights)
+                    entity.mail, entity.home, entity.github, entity.gitlab, entity.playStore,
+                    entity.highlights, entity.skills)
 }

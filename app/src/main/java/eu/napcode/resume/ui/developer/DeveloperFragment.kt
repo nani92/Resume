@@ -6,6 +6,7 @@ import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
+import android.support.design.chip.Chip
 import android.support.v4.app.Fragment
 import android.text.Html
 import android.text.Spanned
@@ -21,6 +22,7 @@ import eu.napcode.resume.utils.startDevPlayStoreActivity
 import eu.napcode.resume.utils.startSendMailActivity
 import eu.napcode.resume.utils.startWebActivity
 import kotlinx.android.synthetic.main.dev_contact.*
+import kotlinx.android.synthetic.main.dev_skills.*
 
 class DeveloperFragment : Fragment() {
 
@@ -56,6 +58,7 @@ class DeveloperFragment : Fragment() {
         devRoleTextView.text = developer.role
 
         devSummaryTextView.text = getSummarySpanned(developer.summary)
+        displaySkills(developer.skills)
         devHighlightsTextView.text = getHighlightsSpanned(developer.highlights)
 
         mailFAB.setOnClickListener { startSendMailActivity(context!!, developer.mail) }
@@ -64,6 +67,18 @@ class DeveloperFragment : Fragment() {
         githubImageView.setOnClickListener { startWebActivity(context!!, "https://github.com/${developer.github}") }
         homeImageView.setOnClickListener { startWebActivity(context!!, developer.home) }
         gitlabImageView.setOnClickListener { startWebActivity(context!!, "https://gitlab.com/${developer.gitlab}") }
+    }
+
+    private fun displaySkills(skills: String) {
+
+        for (skill in skills.split(",")) {
+            var chip = Chip(context)
+            chip.text = skill
+            var padding = resources.getDimension(R.dimen.small_margin).toInt()
+            chip.setPadding(padding, padding, padding, padding)
+
+            skillChipGroup.addView(chip)
+        }
     }
 
     private fun getSummarySpanned(summary: String): Spanned {

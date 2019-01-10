@@ -45,4 +45,6 @@
     <string name="menu_resume_pdf">Resume Pdf</string>
     <string name="resume_pdf">http://napcode.eu/static/natalia-portfolio/resume.pdf</string>
 
+    <string name="dev_skills">Top Skills</string>
+
 </resources>
