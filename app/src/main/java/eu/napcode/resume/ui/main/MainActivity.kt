@@ -101,10 +101,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun displayDeveloperInDrawer(developer: Developer) {
-        navigationView.getHeaderView(0).developerTextView.text =
+        var header = navigationView.getHeaderView(0)
+
+        header.developerTextView.text =
                 getString(R.string.dev_name, developer.name, developer.surname)
-        navigationView.getHeaderView(0).mailImageView
+        header.mailImageView
                 .setOnClickListener { startSendMailActivity(this, developer.mail) }
+        header.devAvatarImageView.setOnClickListener {
+            drawerLayout.closeDrawer(GravityCompat.START)
+            displayFirstFragment()
+        }
     }
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
