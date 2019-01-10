@@ -54,9 +54,12 @@ class DeveloperFragment : Fragment() {
         //TODO hide contact elements when not available :)
         devNameTextView.text = getString(R.string.dev_name, developer.name, developer.surname)
         devRoleTextView.text = developer.role
+
         devSummaryTextView.text = getSummarySpanned(developer.summary)
         devHighlightsTextView.text = getHighlightsSpanned(developer.highlights)
+
         mailFAB.setOnClickListener { startSendMailActivity(context!!, developer.mail) }
+
         playstoreImageView.setOnClickListener { startDevPlayStoreActivity(context!!, developer.playStore) }
         githubImageView.setOnClickListener { startWebActivity(context!!, "https://github.com/${developer.github}") }
         homeImageView.setOnClickListener { startWebActivity(context!!, developer.home) }

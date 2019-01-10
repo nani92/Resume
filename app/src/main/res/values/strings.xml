@@ -39,4 +39,8 @@
 
     <string name="cd_go_to_playstore">Go to PlayStore</string>
     <string name="cd_go_to_github">Go to GitHub</string>
+
+    <string name="menu_portfolio_web">Portfolio Web</string>
+    <string name="portfolio_address">http://napcode.eu/natalia</string>
+
 </resources>

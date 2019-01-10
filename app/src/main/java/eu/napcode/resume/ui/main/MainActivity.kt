@@ -22,6 +22,7 @@ import eu.napcode.resume.ui.education.EducationFragment
 import eu.napcode.resume.ui.projects.ProjectsFragment
 import eu.napcode.resume.ui.work.WorkFragment
 import eu.napcode.resume.utils.startSendMailActivity
+import eu.napcode.resume.utils.startWebActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.drawer_header.view.*
 import javax.inject.Inject
@@ -132,6 +133,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.work -> {
                 fragmentToSet = WorkFragment()
+
+                return true
+            }
+
+            R.id.portfolio_web -> {
+                startWebActivity(this, getString(R.string.portfolio_address))
 
                 return true
             }

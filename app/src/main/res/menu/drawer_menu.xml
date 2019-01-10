@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/projects"
-        android:checkable="true"
-        android:icon="@drawable/ic_projects"
-        android:title="@string/projects"/>
+    <group>
+        <item
+            android:id="@+id/projects"
+            android:checkable="true"
+            android:icon="@drawable/ic_projects"
+            android:title="@string/projects"/>
 
-    <item
-        android:id="@+id/education"
-        android:checkable="true"
-        android:icon="@drawable/ic_open_book"
-        android:title="@string/education"/>
+        <item
+            android:id="@+id/education"
+            android:checkable="true"
+            android:icon="@drawable/ic_open_book"
+            android:title="@string/education"/>
 
-    <item
-        android:id="@+id/work"
-        android:checkable="true"
-        android:icon="@drawable/ic_work"
-        android:title="@string/work"/>
+        <item
+            android:id="@+id/work"
+            android:checkable="true"
+            android:icon="@drawable/ic_work"
+            android:title="@string/work"/>
+    </group>
+    <group>
+        <item
+            android:id="@+id/portfolio_web"
+            android:checkable="false"
+            android:icon="@drawable/ic_grid_world"
+            android:title="@string/menu_portfolio_web"/>
+    </group>
 </menu>
