@@ -42,5 +42,7 @@
 
     <string name="menu_portfolio_web">Portfolio Web</string>
     <string name="portfolio_address">http://napcode.eu/natalia</string>
+    <string name="menu_resume_pdf">Resume Pdf</string>
+    <string name="resume_pdf">http://napcode.eu/static/natalia-portfolio/resume.pdf</string>
 
 </resources>

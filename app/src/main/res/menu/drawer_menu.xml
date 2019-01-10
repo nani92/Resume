@@ -25,5 +25,10 @@
             android:checkable="false"
             android:icon="@drawable/ic_grid_world"
             android:title="@string/menu_portfolio_web"/>
+        <item
+            android:id="@+id/resume_pdf"
+            android:checkable="false"
+            android:icon="@drawable/ic_file"
+            android:title="@string/menu_resume_pdf"/>
     </group>
 </menu>

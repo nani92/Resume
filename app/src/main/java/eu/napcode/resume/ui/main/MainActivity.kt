@@ -143,6 +143,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 return true
             }
 
+            R.id.resume_pdf -> {
+                startWebActivity(this, getString(R.string.resume_pdf))
+
+                return true
+            }
+
             else -> return false
         }
     }
