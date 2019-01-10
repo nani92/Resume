@@ -86,6 +86,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun displayFragment() {
+        var currentFragment = supportFragmentManager.findFragmentById(R.id.mainContainerFrame)
+
+        if (currentFragment != null && currentFragment::class.java == fragmentToSet::class.java) {
+            return
+        }
+
         fragmentToSet.enterTransition = getTransitionForFragment()
 
         supportFragmentManager
